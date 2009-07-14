@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <!-- left-up -->
+  <submodel>
+    <name>left-up-tracer</name>
+    <model>Aircraft/ME-262HGIII/Models/effects/guns/apibullet-tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2460.0</speed>
+    <repeat>true</repeat>
+    <delay>0.6</delay>
+    <count>-1</count>
+    <x-offset> -15.79724 </x-offset> <!-- -4.815 m -->
+    <y-offset> -0.347769 </y-offset> <!-- -0.106 m -->
+    <z-offset> -0.406824 </z-offset> <!-- -0.124 m -->
+    <yaw-offset> 0.0 </yaw-offset>
+    <pitch-offset> 0.1 </pitch-offset>
+    <life>4.0</life>
+    <wind>false</wind>
+    <weight>0.07495</weight>
+    <cd>0.193</cd>
+    <eda>0.00571198</eda> 
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/collision/gun</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/gun</impact-report>
+  </submodel>
+
+  <!--right up-->
+  <submodel>
+    <name>right-up-tracer</name>
+    <model>Aircraft/ME-262HGIII/Models/effects/guns/apibullet-tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2460.0</speed>
+    <repeat>true</repeat>
+    <delay>0.62</delay>
+    <count>-1</count>
+    <x-offset> -15.79724 </x-offset> <!-- -4.815 m -->
+    <y-offset>  0.347769 </y-offset> <!--  0.106 m -->
+    <z-offset> -0.406824 </z-offset> <!-- -0.124 m -->
+    <yaw-offset> 0.0 </yaw-offset>
+    <pitch-offset> 0.1 </pitch-offset>
+    <life>4.0</life>
+    <wind>false</wind>
+    <weight>0.07495</weight>
+    <cd>0.193</cd>
+    <eda>0.00571198</eda> 
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/collision/gun</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/gun</impact-report>
+  </submodel>
+
+  <!-- left-down -->
+  <submodel>
+    <name>left-down-tracer</name>
+    <model>Aircraft/ME-262HGIII/Models/effects/guns/apibullet-tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2460.0</speed>
+    <repeat>true</repeat>
+    <delay>0.6</delay>
+    <count>-1</count>
+    <x-offset> -16.53871 </x-offset> <!-- -5.041 m -->
+    <y-offset> -0.879265 </y-offset> <!-- -0.268 m -->
+    <z-offset> -0.833333 </z-offset> <!-- -0.254 m -->
+    <yaw-offset> 0.0 </yaw-offset>
+    <pitch-offset> 0.1 </pitch-offset>
+    <life>4.0</life>
+    <wind>false</wind>
+    <weight>0.07495</weight>
+    <cd>0.193</cd>
+    <eda>0.00571198</eda> 
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/collision/gun</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/gun</impact-report>
+  </submodel>
+
+  <!--right down-->
+  <submodel>
+    <name>right-down-tracer</name>
+    <model>Aircraft/ME-262HGIII/Models/effects/guns/apibullet-tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2460.0</speed>
+    <repeat>true</repeat>
+    <delay>0.62</delay>
+    <count>-1</count>
+    <x-offset> -16.53871 </x-offset> <!-- -5.041 m -->
+    <y-offset>  0.879265 </y-offset> <!--  0.268 m -->
+    <z-offset> -0.833333 </z-offset> <!-- -0.254 m -->
+    <yaw-offset> 0.0 </yaw-offset>
+    <pitch-offset> 0.1 </pitch-offset>
+    <life>4.0</life>
+    <wind>false</wind>
+    <weight>0.07495</weight>
+    <cd>0.193</cd>
+    <eda>0.00571198</eda> 
+    <collision>true</collision>
+    <collision-report>sim/ai/aircraft/collision/gun</collision-report>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/gun</impact-report>
+  </submodel>
+
+</PropertyList>

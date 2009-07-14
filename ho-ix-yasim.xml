@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Horten Ho IX - 2009 Emmanuel BARANGER
+
+     Using the Me262 FDM for the moment.
+     My first failed test is located in : bad-test-yasim.xml
+-->
+
+<airplane mass="8400">
+
+  <approach speed="110" aoa="9" fuel="1.0">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
+    <control-setting axis="/controls/flight/flaps" value="1"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+    <solve-weight idx="0" weight="170"/>
+  </approach>
+
+  <cruise speed="450" alt="19500" fuel="1.0">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="1"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="1"/>
+    <control-setting axis="/controls/flight/flaps" value="0.0"/>
+    <control-setting axis="/controls/gear/gear-down" value="0"/>
+    <solve-weight idx="0" weight="170"/>
+  </cruise>
+
+  <cockpit x="1.26" y="0.0" z="0.95"/>
+
+  <weight x="1.22" y="0" z="0.43" mass-prop="/yasim/me262/pilot-lb"/>
+  <ballast x="3.9" y="0" z="0.25" mass="900"/>
+
+  <!-- Fuselage with engine on top -->
+  <fuselage ax="6.435" ay="0" az="0.041" bx="-6.045" by="0" bz="0.207" width="1.37" taper="0.5" midpoint="0.40"/>
+
+  <fuselage ax="4.021" ay="1.86" az="-0.67" bx="-0.53" by="1.86" bz="-0.67" width="0.75" taper="0.8" midpoint="0.50"/>
+
+  <fuselage ax="4.021" ay="-1.86" az="-0.67" bx="-0.53" by="-1.86" bz="-0.67" width="0.75" taper="0.8" midpoint="0.50"/>
+
+  <wing x="1.358" y="0.622" z="-0.26"
+        length="4.58" 
+        chord="2.65" 
+        taper="0.5"
+        incidence="2" 
+        twist="-1.0"
+        sweep="10.0" 
+        camber="0"
+        dihedral="6.3">
+        <stall aoa="16" width="3" peak="1.3"/>
+        <flap0 start="0.017" end="0.573" lift="1.3" drag="1.5"/>
+        <flap1 start="0.573" end="0.945" lift="1.1" drag="1.0"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/> 
+        <control-input axis="/controls/flight/aileron" control="FLAP1" square="true" split="true"/> 
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+
+        <control-output control="FLAP0" side="left" prop="/surface-positions/left-flap-pos-norm"/>
+        <control-output control="FLAP0" side="right" prop="/surface-positions/right-flap-pos-norm"/>
+        <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+        <control-output control="FLAP1" prop="/surface-positions/aileron-pos-norm"/>
+   </wing>
+
+   <hstab x="-5.15" y="0" z="0.84"
+         length="1.46" 
+         chord="1.33" 
+         taper="0.25"
+         dihedral="0.0">
+         <stall aoa="20" width="3" peak="1.3"/>
+ 
+        <flap0 start="0.1" end="0.8" lift="1.6" drag="1.5"/>
+        <flap1 start="0.1" end="0.8" lift="1.6" drag="1.5"/>
+        <control-input axis="/controls/flight/elevator" square="false" control="FLAP0" />
+        <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+        <control-output control="FLAP0" side="left" prop="/surface-positions/left-elevator-pos-norm"/>
+        <control-output control="FLAP0" side="right" prop="/surface-positions/right-elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-5.70" y="0.00" z="1.17"
+         length="0.707" 
+         chord="2.25" 
+         taper="0.25">
+         <stall aoa="16" width="5" peak="1.5"/>
+         <flap0 start="0.1" end="0.9" lift="1.8" drag="1.3"/>
+         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+  </vstab>
+
+  <!-- 
+   Junkers Jumo 004B turbojet
+   2000 lbf
+  -->
+  <jet x="1.74" y="1.86" z="-0.59"
+       n1-idle="30" 
+       n1-max="90" 
+       n2-idle="35" 
+       n2-max="95"
+       egt="850" 
+       tsfc="1.39"
+       mass="1642" 
+       thrust="2000" >
+       <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+  </jet>
+  
+  <jet x="1.74" y="-1.86" z="-0.59" 
+       n1-idle="30" 
+       n1-max="90" 
+       n2-idle="35" 
+       n2-max="95"
+       egt="850"  
+       tsfc="1.39"  
+       mass="1642" 
+       thrust="2000" >
+       <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
+</jet>
+
+  <!-- Undercarriage -->
+  <!-- nose -->
+  <gear x="2.355" y="0" z="-1.397"
+        retract-time="7"
+        compression="0.30"
+        spring="1"
+        damp="2" >
+        <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0="-0.1" dst1="0.1"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+
+        <control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+
+  <!-- left main -->
+  <gear x="-0.908" y="1.599" z="-0.780"
+        retract-time="7"
+        compression="0.30"
+        spring="1"
+        damp="2" >
+
+        <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+
+        <control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+
+  <!-- right main -->
+  <gear x="-0.908" y="-1.599" z="-0.780"
+        retract-time="7"
+        compression="0.30"
+        spring="1"
+        damp="2" >
+
+        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+
+        <control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+
+  <!-- Internal tanks 
+   2*280 liter wings
+  -->
+  <tank x="1.10" y="-2.3" z="0.10" jet="true" capacity="1250"/>
+  <tank x="1.10"  y="2.3" z="0.10" jet="true" capacity="1250"/>
+
+  <!-- CG Théorique x=1.358 y=0 z=-0.260 -->
+  <!-- x à 1.536 pour être en avant des roues -->
+  <ballast x="0" y="0" z="-4" mass="1000"/>
+
+</airplane>
+
