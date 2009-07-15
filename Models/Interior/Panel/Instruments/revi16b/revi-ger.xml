@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList> 
+
+  <path>revi-ger.ac</path>
+
+  <animation>
+    <object-name>casing</object-name>
+    <object-name>shadeholder</object-name>
+
+    <object-name>sunshade</object-name>
+    <object-name>lens2</object-name>
+    <object-name>crosshair</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>sunshade</object-name>
+    <object-name>lens2</object-name>
+    <object-name>crosshair</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>glass.png</texture>
+    <object-name>sunshade</object-name>
+    <object-name>lens2</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>crosshair</object-name>
+    <emission>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>casing</object-name>
+    <object-name>shadeholder</object-name>
+    <object-name>sunshade</object-name>
+    <object-name>lens2</object-name>
+    <object-name>crosshair</object-name>
+    <property>/controls/armament/revi/position-norm</property>
+    <factor>90.0</factor>
+    <center>
+      <x-m>  3.040 </x-m>
+      <y-m> -0.033 </y-m>
+      <z-m> -0.043 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>casing</object-name>
+    <object-name>shadeholder</object-name>
+    <object-name>sunshade</object-name>
+    <object-name>lens2</object-name>
+    <object-name>crosshair</object-name>
+    <property>/controls/armament/revi/position-norm</property>
+    <factor>-90.0</factor>
+    <center>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.005 </y-m>
+      <z-m> -0.004 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>casing</object-name>
+    <object-name>shadeholder</object-name>
+    <object-name>sunshade</object-name>
+    <object-name>lens2</object-name>
+    <object-name>crosshair</object-name>
+    <property>/controls/armament/revi/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 0.000 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.048 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 2 </y>
+      <z> 2 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>shadeholder</object-name>
+    <object-name>sunshade</object-name>
+    <property>/controls/armament/revi/shadeup</property>
+    <factor>65.0</factor>
+    <center>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.005 </y-m>
+      <z-m> -0.004 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>crosshair</object-name>
+    <condition>
+      <equals>
+        <property>controls/armament/master-arm</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+</PropertyList>

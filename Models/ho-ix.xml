@@ -32,16 +32,19 @@
     <object-name>porteAG</object-name>
     <object-name>porteAD</object-name>
     <object-name>axeA</object-name>
+    <object-name>axeAB</object-name>
     <object-name>roueA</object-name>
     <object-name>porteG1</object-name>
     <object-name>porteG2</object-name>
     <object-name>porteG3</object-name>
     <object-name>axeG</object-name>
+    <object-name>axeGB</object-name>
     <object-name>roueG</object-name>
     <object-name>porteD1</object-name>
     <object-name>porteD2</object-name>
     <object-name>porteD3</object-name>
     <object-name>axeD</object-name>
+    <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
     <object-name>boutsmoteurs</object-name>
     <object-name>heliceG1</object-name>
@@ -53,6 +56,7 @@
     <object-name>trous</object-name>
     <object-name>cadre</object-name>
     <object-name>cadrecanope</object-name>
+    <object-name>guns</object-name>
 
     <!-- Objets transparents -->
     <object-name>avantvitres</object-name>
@@ -92,16 +96,19 @@
     <object-name>porteAG</object-name>
     <object-name>porteAD</object-name>
     <object-name>axeA</object-name>
+    <object-name>axeAB</object-name>
     <object-name>roueA</object-name>
     <object-name>porteG1</object-name>
     <object-name>porteG2</object-name>
     <object-name>porteG3</object-name>
     <object-name>axeG</object-name>
+    <object-name>axeGB</object-name>
     <object-name>roueG</object-name>
     <object-name>porteD1</object-name>
     <object-name>porteD2</object-name>
     <object-name>porteD3</object-name>
     <object-name>axeD</object-name>
+    <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
     <object-name>boutsmoteurs</object-name>
     <object-name>heliceG1</object-name>
@@ -111,6 +118,7 @@
     <object-name>sortiesmoteurs</object-name>
     <object-name>canope</object-name>
     <object-name>trous</object-name>
+    <object-name>guns</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
@@ -146,14 +154,17 @@
 -->
   </animation>
 
-  <!-- Rentré des roues Temporairement disparition/apparition des roues -->
+  <!-- disparition des roues une fois rentrées-->
   <animation>
     <type>select</type>
     <object-name>axeA</object-name>
+    <object-name>axeAB</object-name>
     <object-name>roueA</object-name>
     <object-name>axeG</object-name>
+    <object-name>axeGB</object-name>
     <object-name>roueG</object-name>
     <object-name>axeD</object-name>
+    <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
     <condition>
       <not>
@@ -206,6 +217,27 @@
     </offsets>
   </model>
 
+  <!-- Effets de tir -->
+  <!-- gauche -->
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/guns/fire.xml</path>
+    <offsets>
+      <x-m> -3.364 </x-m>
+      <y-m> -1.095 </y-m>
+      <z-m>  0.500 </z-m>
+    </offsets>
+  </model>
+
+  <!-- roite -->
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/guns/fire.xml</path>
+    <offsets>
+      <x-m> -3.364 </x-m>
+      <y-m>  1.095 </y-m>
+      <z-m>  0.500 </z-m>
+    </offsets>
+  </model>
+  
   <!-- Les flammes -->
   <!-- Droite -->
   <model>
@@ -505,6 +537,7 @@
     <name>TrainAvant</name>
     <object-name>roueA</object-name>
     <object-name>axeA</object-name>
+    <object-name>axeAB</object-name>
   </animation>
 
   <animation>
@@ -531,6 +564,7 @@
     <name>TrainGauche</name>
     <object-name>roueG</object-name>
     <object-name>axeG</object-name>
+    <object-name>axeGB</object-name>
   </animation>
 
   <animation>
@@ -577,6 +611,7 @@
     <name>TrainDroit</name>
     <object-name>roueD</object-name>
     <object-name>axeD</object-name>
+    <object-name>axeDB</object-name>
   </animation>
 
   <animation>
@@ -754,16 +789,108 @@
     </axis>
   </animation>
 
-  <!-- Rotation de la roue avant en fonction de la gouverne de direction -->
+  <!-- Compression -->
   <animation>
-    <name>RoueAvant</name>
+    <name>CompressionAvant</name>
     <object-name>roueA</object-name>
-    <object-name>axeA</object-name>
+    <object-name>axeAB</object-name>
   </animation>
 
   <animation>
+    <type>translate</type>
+    <object-name>CompressionAvant</object-name>
+    <property>/gear/gear[0]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 0.0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.3 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>CompressionGauche</name>
+    <object-name>roueG</object-name>
+    <object-name>axeGB</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>CompressionGauche</object-name>
+    <property>/gear/gear[1]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> -0.05 </dep></entry>
+      <entry><ind> 0.13 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 1.00 </ind><dep>  0.30 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>porteG3</object-name>
+    <property>/gear/gear[1]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> -0.05 </dep></entry>
+      <entry><ind> 0.05 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 1.00 </ind><dep>  0.30 </dep></entry>
+    </interpolation>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>CompressionDroite</name>
+    <object-name>roueD</object-name>
+    <object-name>axeDB</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>CompressionDroite</object-name>
+    <property>/gear/gear[2]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> -0.05 </dep></entry>
+      <entry><ind> 0.05 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 1.00 </ind><dep>  0.30 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>porteD3</object-name>
+    <property>/gear/gear[2]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> -0.05 </dep></entry>
+      <entry><ind> 0.05 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 1.00 </ind><dep>  0.30 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Rotation de la roue avant en fonction de la gouverne de direction -->
+  <animation>
     <type>rotate</type>
-    <object-name>RoueAvant</object-name>
+    <object-name>TrainAvant</object-name>
     <property>/surface-positions/rudder-pos-norm</property>
     <factor>  15.0 </factor>
     <center>

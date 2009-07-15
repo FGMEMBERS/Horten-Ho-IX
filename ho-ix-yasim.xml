@@ -125,6 +125,7 @@
         damp="2" >
         <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0="-0.1" dst1="0.1"/>
         <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
 
         <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
 

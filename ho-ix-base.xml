@@ -30,7 +30,17 @@
      <splash-texture>Aircraft/Horten-Ho-IX/ho-ix-splash.png</splash-texture>
     </startup>
 
-    <virtual-cockpit archive="y">true</virtual-cockpit>
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+      </generic>
+    </multiplay>
 
     <help>
       <title>Horten Ho IX</title>
