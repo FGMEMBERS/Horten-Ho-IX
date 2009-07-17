@@ -280,8 +280,8 @@
   <animation>
     <type>spin</type>
     <object-name>heliceG1</object-name>
-    <property>/controls/engines/engine[0]/throttle</property>
-    <factor> 100 </factor>
+    <property>/engines/engine[0]/n2</property>
+    <factor> -1 </factor>
     <center>
       <x-m> -2.839 </x-m>
       <y-m> -0.646 </y-m>
@@ -297,8 +297,8 @@
   <animation>
     <type>spin</type>
     <object-name>heliceG2</object-name>
-    <property>/controls/engines/engine[0]/throttle</property>
-    <factor> 100 </factor>
+    <property>/engines/engine[0]/n2</property>
+    <factor> -1 </factor>
     <center>
       <x-m>  0.398 </x-m>
       <y-m> -0.646 </y-m>
@@ -314,8 +314,8 @@
   <animation>
     <type>spin</type>
     <object-name>heliceD1</object-name>
-    <property>/controls/engines/engine[1]/throttle</property>
-    <factor> 100 </factor>
+    <property>/engines/engine[1]/n2</property>
+    <factor> -1 </factor>
     <center>
       <x-m> -2.839 </x-m>
       <y-m>  0.646 </y-m>
@@ -331,8 +331,8 @@
   <animation>
     <type>spin</type>
     <object-name>heliceD2</object-name>
-    <property>/controls/engines/engine[1]/throttle</property>
-    <factor> 100 </factor>
+    <property>/engines/engine[1]/n2</property>
+    <factor> -1 </factor>
     <center>
       <x-m> 0.398 </x-m>
       <y-m> 0.646 </y-m>
@@ -838,9 +838,9 @@
     <object-name>porteG3</object-name>
     <property>/gear/gear[1]/compression-norm</property>
     <interpolation>
-      <entry><ind> 0.00 </ind><dep> -0.05 </dep></entry>
-      <entry><ind> 0.05 </ind><dep>  0.00 </dep></entry>
-      <entry><ind> 1.00 </ind><dep>  0.30 </dep></entry>
+      <entry><ind> 0.00 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 0.05 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 1.00 </ind><dep> 0.30 </dep></entry>
     </interpolation>
     <axis>
       <x>  0 </x>
@@ -876,9 +876,9 @@
     <object-name>porteD3</object-name>
     <property>/gear/gear[2]/compression-norm</property>
     <interpolation>
-      <entry><ind> 0.00 </ind><dep> -0.05 </dep></entry>
-      <entry><ind> 0.05 </ind><dep>  0.00 </dep></entry>
-      <entry><ind> 1.00 </ind><dep>  0.30 </dep></entry>
+      <entry><ind> 0.00 </ind><dep> 0.05 </dep></entry>
+      <entry><ind> 0.05 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 1.00 </ind><dep> 0.30 </dep></entry>
     </interpolation>
     <axis>
       <x> 0 </x>
