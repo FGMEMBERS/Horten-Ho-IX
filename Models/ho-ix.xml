@@ -217,6 +217,16 @@
     </offsets>
   </model>
 
+  <!-- Droite -->
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/flammes/flammesD.xml</path>
+    <offsets>
+      <x-m> 0.632 </x-m>
+      <y-m> 0.646 </y-m>
+      <z-m> 0.656 </z-m>
+    </offsets>
+  </model>
+
   <!-- Effets de tir -->
   <!-- gauche -->
   <model>
@@ -228,7 +238,7 @@
     </offsets>
   </model>
 
-  <!-- roite -->
+  <!-- droite -->
   <model>
     <path>Aircraft/Horten-Ho-IX/Models/effects/guns/fire.xml</path>
     <offsets>
@@ -238,17 +248,6 @@
     </offsets>
   </model>
   
-  <!-- Les flammes -->
-  <!-- Droite -->
-  <model>
-    <path>Aircraft/Horten-Ho-IX/Models/effects/flammes/flammesD.xml</path>
-    <offsets>
-      <x-m> 0.632 </x-m>
-      <y-m> 0.646 </y-m>
-      <z-m> 0.656 </z-m>
-    </offsets>
-  </model>
-
   <!-- Particules OSG -->
   <!-- Gauche -->
   <model>
@@ -263,6 +262,30 @@
     </offsets>
   </model>
 
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/smoke.xml</path>
+    <offsets>
+      <x-m>  0.632 </x-m>
+      <y-m> -0.646 </y-m>
+      <z-m>  0.656 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/tiptrail.xml</path>
+    <offsets>
+      <x-m>  2.695 </x-m>
+      <y-m> -8.185 </y-m>
+      <z-m>  0.752 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
   <!-- Droite -->
   <model>
     <path>Aircraft/Horten-Ho-IX/Models/effects/trailR.xml</path>
@@ -270,6 +293,30 @@
       <x-m> 0.632 </x-m>
       <y-m> 0.646 </y-m>
       <z-m> 0.656 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/smoke.xml</path>
+    <offsets>
+      <x-m> 0.632 </x-m>
+      <y-m> 0.646 </y-m>
+      <z-m> 0.656 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/tiptrail.xml</path>
+    <offsets>
+      <x-m> 2.695 </x-m>
+      <y-m> 8.185 </y-m>
+      <z-m> 0.752 </z-m>
       <roll-deg>    0 </roll-deg>
       <pitch-deg>   0 </pitch-deg>
       <heading-deg> 0 </heading-deg>
@@ -379,7 +426,7 @@
   <animation>
     <type>rotate</type>
     <object-name>aileronG</object-name>
-    <property>/controls/flight/elevator</property>
+    <property>/surface-positions/left-elevator-pos-norm</property>
     <factor> 20 </factor>
     <axis>
       <x1-m>  1.995 </x1-m>
@@ -394,7 +441,7 @@
   <animation>
     <type>rotate</type>
     <object-name>aileronD</object-name>
-    <property>/controls/flight/elevator</property>
+    <property>/surface-positions/right-elevator-pos-norm</property>
     <factor> 20 </factor>
     <axis>
       <x1-m> 1.219 </x1-m>
