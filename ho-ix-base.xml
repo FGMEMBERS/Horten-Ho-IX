@@ -58,12 +58,6 @@
 
   </sim>
 
-  <yasim>
-    <ho-ix>
-      <pilot-lb>128</pilot-lb>
-    </ho-ix>
-  </yasim>
-
   <engines>
     <engine n="0">
       <engine-num type="int">0</engine-num>
