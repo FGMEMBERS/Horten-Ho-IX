@@ -7,7 +7,7 @@
     <desc>Passenger door</desc>
     <binding>
       <command>nasal</command>
-      <script>hoix.doorsystem.passengerexport();</script>
+      <script>doors.doorsystem.passengerexport();</script>
     </binding>
   </key>
 
@@ -16,7 +16,7 @@
     <desc>Crew door</desc>
     <binding>
       <command>nasal</command>
-      <script>hoix.doorsystem.crewexport();</script>
+      <script>doors.doorsystem.crewexport();</script>
     </binding>
   </key>
 

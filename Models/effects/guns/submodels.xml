@@ -24,7 +24,8 @@
     <collision>true</collision>
     <collision-report>sim/ai/aircraft/collision/gun</collision-report>
     <impact>true</impact>
-    <impact-report>sim/ai/aircraft/impact/gun</impact-report>
+    <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
+    <submodel-path>Aircraft/Horten-Ho-IX/Models/effects/guns/bullet-submodel.xml</submodel-path>
   </submodel>
 
   <!-- right -->
@@ -49,7 +50,8 @@
     <collision>true</collision>
     <collision-report>sim/ai/aircraft/collision/gun</collision-report>
     <impact>true</impact>
-    <impact-report>sim/ai/aircraft/impact/gun</impact-report>
+    <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
+    <submodel-path>Aircraft/Horten-Ho-IX/Models/effects/guns/bullet-submodel.xml</submodel-path>
   </submodel>
 
 </PropertyList>

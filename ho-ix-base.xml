@@ -39,6 +39,8 @@
         <int type="int">0</int>
         <int type="int">0</int>
         <int type="int">0</int>
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
       </generic>
     </multiplay>
 
@@ -92,9 +94,12 @@
  
   <nasal>
     <hoix>
-      <file>Aircraft/Horten-Ho-IX/Nasal/doors.nas</file>
       <file>Aircraft/Horten-Ho-IX/Nasal/liveries.nas</file>
+      <file>Aircraft/Horten-Ho-IX/Nasal/light.nas</file>
     </hoix>
+    <doors>
+      <file>Aircraft/Horten-Ho-IX/Nasal/doors.nas</file>
+    </doors>
     <guns>
       <file>Aircraft/Horten-Ho-IX/Nasal/weapons.nas</file>
       <file>Aircraft/Horten-Ho-IX/Nasal/revi.nas</file>
