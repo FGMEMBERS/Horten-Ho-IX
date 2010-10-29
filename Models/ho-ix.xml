@@ -7,9 +7,23 @@
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/Horten-Ho-IX/Models/Liveries", 10);
+
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+    
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
     </load>
+
     <unload>
       livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
     </unload>
   </nasal>
 
@@ -31,31 +45,32 @@
     <object-name>porteA</object-name>
     <object-name>porteAG</object-name>
     <object-name>porteAD</object-name>
-    <object-name>axeA</object-name>
-    <object-name>axeAB</object-name>
-    <object-name>roueA</object-name>
     <object-name>porteG1</object-name>
     <object-name>porteG2</object-name>
     <object-name>porteG3</object-name>
-    <object-name>axeG</object-name>
-    <object-name>axeGB</object-name>
-    <object-name>roueG</object-name>
     <object-name>porteD1</object-name>
     <object-name>porteD2</object-name>
     <object-name>porteD3</object-name>
+    <object-name>boutsmoteurs</object-name>
+    <object-name>sortiesmoteurs</object-name>
+    <object-name>canope</object-name>
+
+    <object-name>cadre</object-name>
+    <object-name>cadrecanope</object-name>
+    <object-name>axeA</object-name>
+    <object-name>axeAB</object-name>
+    <object-name>roueA</object-name>
+    <object-name>axeG</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>roueG</object-name>
     <object-name>axeD</object-name>
     <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
-    <object-name>boutsmoteurs</object-name>
     <object-name>heliceG1</object-name>
     <object-name>heliceG2</object-name>
     <object-name>heliceD1</object-name>
     <object-name>heliceD2</object-name>
-    <object-name>sortiesmoteurs</object-name>
-    <object-name>canope</object-name>
     <object-name>trous</object-name>
-    <object-name>cadre</object-name>
-    <object-name>cadrecanope</object-name>
     <object-name>guns</object-name>
 
     <!-- Objets transparents -->
@@ -81,28 +96,31 @@
     <object-name>porteA</object-name>
     <object-name>porteAG</object-name>
     <object-name>porteAD</object-name>
-    <object-name>axeA</object-name>
-    <object-name>axeAB</object-name>
-    <object-name>roueA</object-name>
     <object-name>porteG1</object-name>
     <object-name>porteG2</object-name>
     <object-name>porteG3</object-name>
-    <object-name>axeG</object-name>
-    <object-name>axeGB</object-name>
-    <object-name>roueG</object-name>
     <object-name>porteD1</object-name>
     <object-name>porteD2</object-name>
     <object-name>porteD3</object-name>
+    <object-name>boutsmoteurs</object-name>
+    <object-name>sortiesmoteurs</object-name>
+    <object-name>canope</object-name>
+
+    <object-name>cadre</object-name>
+    <object-name>cadrecanope</object-name>
+    <object-name>axeA</object-name>
+    <object-name>axeAB</object-name>
+    <object-name>roueA</object-name>
+    <object-name>axeG</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>roueG</object-name>
     <object-name>axeD</object-name>
     <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
-    <object-name>boutsmoteurs</object-name>
     <object-name>heliceG1</object-name>
     <object-name>heliceG2</object-name>
     <object-name>heliceD1</object-name>
     <object-name>heliceD2</object-name>
-    <object-name>sortiesmoteurs</object-name>
-    <object-name>canope</object-name>
     <object-name>trous</object-name>
     <object-name>guns</object-name>
 
@@ -218,22 +236,42 @@
     </offsets>
   </model>
 
+  <!-- Effets sur le sol -->
+  <!-- Roue avant -->
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/ground/ground0.xml</path>
+    <offsets>
+      <x-m> -2.355 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.397 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roues gauches -->
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/ground/ground1.xml</path>
+    <offsets>
+      <x-m>  0.908 </x-m>
+      <y-m> -1.599 </y-m>
+      <z-m> -0.780 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roues droites -->
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/ground/ground2.xml</path>
+    <offsets>
+      <x-m>  0.908 </x-m>
+      <y-m>  1.599 </y-m>
+      <z-m> -0.780 </z-m>
+    </offsets>
+  </model>
+
   <!-- Une ombre pour OSG -->
   <model>
     <name>shadowOSG</name>
     <path>Aircraft/Horten-Ho-IX/Models/shadow.xml</path>
   </model>
-
-  <animation>
-    <type>select</type>
-    <object-name>shadowOSG</object-name>
-    <condition>
-      <equals>
-        <property>/sim[0]/rendering/shadows-ai</property>
-        <value>true</value>
-      </equals>
-    </condition>
-  </animation>
 
   <!-- Les flammes -->
   <!-- Gauche -->
@@ -261,7 +299,7 @@
   <model>
     <path>Aircraft/Horten-Ho-IX/Models/effects/guns/fire.xml</path>
     <offsets>
-      <x-m> -3.364 </x-m>
+      <x-m> -3.324 </x-m>
       <y-m> -1.095 </y-m>
       <z-m>  0.500 </z-m>
     </offsets>
@@ -271,7 +309,7 @@
   <model>
     <path>Aircraft/Horten-Ho-IX/Models/effects/guns/fire.xml</path>
     <offsets>
-      <x-m> -3.364 </x-m>
+      <x-m> -3.324 </x-m>
       <y-m>  1.095 </y-m>
       <z-m>  0.500 </z-m>
     </offsets>
@@ -280,7 +318,7 @@
   <!-- Particules OSG -->
   <!-- Gauche -->
   <model>
-    <path>Aircraft/Horten-Ho-IX/Models/effects/trailL.xml</path>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/trail/trailL.xml</path>
     <offsets>
       <x-m>  0.632 </x-m>
       <y-m> -0.646 </y-m>
@@ -292,7 +330,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Horten-Ho-IX/Models/effects/smoke.xml</path>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/smoke/smoke.xml</path>
     <offsets>
       <x-m>  0.632 </x-m>
       <y-m> -0.646 </y-m>
@@ -304,7 +342,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Horten-Ho-IX/Models/effects/tiptrail.xml</path>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/tiptrail/tiptrail.xml</path>
     <offsets>
       <x-m>  2.695 </x-m>
       <y-m> -8.185 </y-m>
@@ -317,7 +355,7 @@
 
   <!-- Droite -->
   <model>
-    <path>Aircraft/Horten-Ho-IX/Models/effects/trailR.xml</path>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/trail/trailR.xml</path>
     <offsets>
       <x-m> 0.632 </x-m>
       <y-m> 0.646 </y-m>
@@ -329,7 +367,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Horten-Ho-IX/Models/effects/smoke.xml</path>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/smoke/smoke.xml</path>
     <offsets>
       <x-m> 0.632 </x-m>
       <y-m> 0.646 </y-m>
@@ -341,7 +379,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Horten-Ho-IX/Models/effects/tiptrail.xml</path>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/tiptrail/tiptrail.xml</path>
     <offsets>
       <x-m> 2.695 </x-m>
       <y-m> 8.185 </y-m>

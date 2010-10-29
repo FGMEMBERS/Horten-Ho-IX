@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- Horten Ho IX - 2009 Emmanuel BARANGER
+<!-- Horten Ho IX         : BARANGER Emmanuel (2009)
+     updated              : BARANGER Emmanuel (2010) with melchior's script
 
-     Using the script of Melchior.
+     Sources              : http://en.wikipedia.org/wiki/Horten_Ho_229
+
+     Envergure            :   16.76 m        ( 55 ft 0 in)
+     Longueur             :    7.47 m        ( 24 ft 6 in)
+     Hauteur              :    2.81 m        (  9 ft 2 in)
+     Masse a vide         :    4600 kg       ( 10141 lb)
+     Moteur               : 2 Junkers Jumo 004B turbojet (1956 lbf each)
+     Vitesse max          : Mach 0.92, 977 km/h (528 kt) at 12000 m (39370 ft)
 -->
 
-<airplane mass="8400">
+<airplane mass="10141">
 
   <approach speed="98" aoa="7" fuel="0.3">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
@@ -14,7 +22,7 @@
     <control-setting axis="/controls/gear/gear-down" value="1"/>
   </approach>
 
-  <cruise speed="450" alt="19500" fuel="0.7">
+  <cruise speed="480" alt="19500" fuel="0.7">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="1"/>
     <control-setting axis="/controls/engines/engine[1]/throttle" value="1"/>
     <control-setting axis="/controls/flight/flaps" value="0"/>
@@ -26,23 +34,24 @@
   <!-- Fuselage with engine on top -->
   <fuselage ax="3.733" ay="0" az="0.473" bx="-3.713" by="0" bz="0.477" width="1.37" taper="0.3" midpoint="0.15"/>
 
-  <fuselage ax="3.142" ay="0.660" az="0.557" bx="-0.749" by="0.660" bz="0.557" width="0.75" taper="1" midpoint="0.40"/>
+  <fuselage ax="3.142" ay="0.660" az="0.557" bx="-0.749" by="0.660" bz="0.557" width="0.75" taper="0.6" midpoint="0.40"/>
 
-  <fuselage ax="3.142" ay="-0.660" az="0.557" bx="-0.749" by="-0.660" bz="0.557" width="0.75" taper="1" midpoint="0.40"/>
+  <fuselage ax="3.142" ay="-0.660" az="0.557" bx="-0.749" by="-0.660" bz="0.557" width="0.75" taper="0.6" midpoint="0.40"/>
 
   <wing x="1.344" y="0.622" z="0.540"
         chord="3.940"
         length="8.6"
         taper="0.35"
         sweep="24"
-        dihedral="2.5"
         incidence="1"
-        camber="0.048">
-        <stall aoa="16" width="3" peak="1.3"/>
+        dihedral="2.5"
+        camber="0.005">
+        <stall aoa="18" width="1.5" peak="1.5"/>
         <flap0 start="0.01" end="0.48" lift="1.3" drag="1.5"/>
-        <flap1 start="0.48" end="1" lift="1.1" drag="1.0"/>
+        <flap1 start="0.48" end="1" lift="1.4" drag="1.2"/>
 
         <control-input axis="/controls/flight/flaps" control="FLAP0" invert="true"/>
+
         <control-input axis="/controls/flight/aileron" control="FLAP1" square="true" split="true"/> 
         <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
 
@@ -61,11 +70,12 @@
           taper="0.35"
           sweep="24"
           incidence="1"
-          dihedral="2.5">
-          <stall aoa="20" width="1.5" peak="1.5"/>
-          <flap0 start="0.48" end="1" lift="1.4" drag="1.2"/>
+          dihedral="2.5"
+          camber="0.005">
+          <stall aoa="18" width="1.5" peak="1.5"/>
+          <flap0 start="0.48" end="1" lift="1.1" drag="1.0"/>
 
-          <control-input axis="/controls/flight/elevator" square="false" control="FLAP0" />
+          <control-input axis="/controls/flight/elevator" square="false" control="FLAP0"/>
           <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
 
           <control-output control="FLAP0" side="left" prop="/surface-positions/left-elevator-pos-norm"/>
@@ -98,30 +108,36 @@
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
   </vstab>
 
-  <!-- Junkers Jumo 004B turbojet 2000 lbf -->
+  <!-- Engines   source            : http://en.wikipedia.org/wiki/Junkers_Jumo_004
+
+                 name              : Junkers Jumo 004
+                 type              : Turbojet
+                 power cruise      : 1980 lbf at 8700 rpm
+                 weight            : 719 kg (1585 lb)
+  -->
   <jet x="0.467" y="0.660" z="0.557"
+       mass="1585"
        n1-idle="30" 
        n1-max="90" 
        n2-idle="35" 
        n2-max="95"
        egt="850" 
        tsfc="1.39"
-       mass="1642" 
-       thrust="2000" >
+       thrust="1980">
        <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
   </jet>
   
   <jet x="0.467" y="-0.660" z="0.557" 
+       mass="1585" 
        n1-idle="30" 
        n1-max="90" 
        n2-idle="35" 
        n2-max="95"
        egt="850"  
        tsfc="1.39"  
-       mass="1642" 
-       thrust="2000" >
+       thrust="1980" >
        <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
-</jet>
+  </jet>
 
   <!-- Undercarriage -->
   <!-- nose -->
@@ -170,12 +186,11 @@
   </gear>
 
   <!-- Internal tanks 2*280 liter wings -->
-  <tank x="0.6" y="-2.3" z="0.60" jet="true" capacity="1250"/>
-  <tank x="0.6"  y="2.3" z="0.60" jet="true" capacity="1250"/>
+  <tank x="0.7" y="-2.3" z="0.60" jet="true" capacity="1250"/>
+  <tank x="0.7"  y="2.3" z="0.60" jet="true" capacity="1250"/>
 
-  <!-- CG Theorique x=1.358 y=0 z=-0.260 -->
-  <!-- x a 1.536 pour etre en avant des roues -->
-  <ballast x="1.81" y="0" z="-1.5" mass="1000"/>
+  <!-- CG Theorique x=1.358 y=0 z=-0.260
+  <ballast x="1.81" y="0" z="-1.5" mass="1000"/> -->
 
 </airplane>
 

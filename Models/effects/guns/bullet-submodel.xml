@@ -5,7 +5,7 @@
 
   <submodel>
     <name>bullet splash</name>
-    <model>Aircraft/Horten-Ho-IX/Models/effects/guns/flack.xml</model>
+    <model>Aircraft/Horten-Ho-IX/Models/effects/guns/explosion.xml</model>
     <speed>0</speed>
     <repeat>false</repeat>
     <delay>0</delay>
