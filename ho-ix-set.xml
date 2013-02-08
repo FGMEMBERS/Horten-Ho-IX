@@ -1,11 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- <PropertyList include="ho-ix-jsbsim-cnf.xml"> -->
 <PropertyList include="ho-ix-yasim-cnf.xml">
 
   <sim>
-    <description>Horten Ho IX</description>
+    
+    <description>Horten Ho IX (YASim)</description>
     <author>Emmanuel BARANGER (3D/FDM)</author>
+    
+    <rating>
+      <FDM type="int">     3 </FDM>
+      <systems type="int"> 1 </systems>
+      <cockpit type="int"> 3 </cockpit>
+      <model type="int">   4 </model>
+    </rating>
+    
   </sim>
 
 </PropertyList>

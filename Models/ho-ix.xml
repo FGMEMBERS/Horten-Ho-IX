@@ -127,35 +127,16 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
     </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
 
   <effect>
@@ -185,7 +166,42 @@
     <object-name>boutsmoteurs</object-name>
     <object-name>sortiesmoteurs</object-name>
     <object-name>canope</object-name>
-  </effect>
+     <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+ </effect>
+
+  <effect>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>spoilerGH</object-name>
+    <object-name>spoilerGB</object-name>
+    <object-name>spoilerDH</object-name>
+    <object-name>spoilerDB</object-name>
+    <object-name>pito</object-name>
+    <object-name>antennes</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG1</object-name>
+    <object-name>voletG2</object-name>
+    <object-name>voletD1</object-name>
+    <object-name>voletD2</object-name>
+    <object-name>porteA</object-name>
+    <object-name>porteAG</object-name>
+    <object-name>porteAD</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+    <object-name>porteG3</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>porteD2</object-name>
+    <object-name>porteD3</object-name>
+    <object-name>boutsmoteurs</object-name>
+    <object-name>sortiesmoteurs</object-name>
+    <object-name>canope</object-name>
+     <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+ </effect>
 
   <animation>
     <type>shader</type>
@@ -201,7 +217,17 @@
     <object-name>vitres</object-name>
   </animation>
 
-  <!-- disparition des roues une fois rentrées-->
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>avantvitres</object-name>
+    <object-name>vitres</object-name>
+  </effect>
+
+  <!-- disparition des roues une fois rentrées
   <animation>
     <type>select</type>
     <object-name>axeA</object-name>
@@ -221,20 +247,29 @@
         </equals>
       </not>
     </condition>
-  </animation>
+  </animation> -->
+
+  <!-- Une ombre pour OSG -->
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/shadow.xml</path>
+    <offsets>
+      <x-m> -0.0099 </x-m>
+      <y-m>  0.0000 </y-m>
+      <z-m> -1.1300 </z-m>
+    </offsets>
+  </model>
 
   <!-- Interieur -->
   <model>
+    <name>Interieur</name>
     <path>Aircraft/Horten-Ho-IX/Models/Interior/interior.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
-    </offsets>
   </model>
+
+  <!-- For Rembrandt -->
+  <animation>
+    <type>noshadow</type>
+    <object-name>Interieur</object-name>
+  </animation>
 
   <!-- Effets sur le sol -->
   <!-- Roue avant -->
@@ -267,16 +302,10 @@
     </offsets>
   </model>
 
-  <!-- Une ombre pour OSG -->
-  <model>
-    <name>shadowOSG</name>
-    <path>Aircraft/Horten-Ho-IX/Models/shadow.xml</path>
-  </model>
-
   <!-- Les flammes -->
   <!-- Gauche -->
   <model>
-    <path>Aircraft/Horten-Ho-IX/Models/effects/flammes/flammesG.xml</path>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/flammes/combustionG.xml</path>
     <offsets>
       <x-m>  0.632 </x-m>
       <y-m> -0.646 </y-m>
@@ -286,7 +315,7 @@
 
   <!-- Droite -->
   <model>
-    <path>Aircraft/Horten-Ho-IX/Models/effects/flammes/flammesD.xml</path>
+    <path>Aircraft/Horten-Ho-IX/Models/effects/flammes/combustionD.xml</path>
     <offsets>
       <x-m> 0.632 </x-m>
       <y-m> 0.646 </y-m>
@@ -323,9 +352,6 @@
       <x-m>  0.632 </x-m>
       <y-m> -0.646 </y-m>
       <z-m>  0.656 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -335,9 +361,6 @@
       <x-m>  0.632 </x-m>
       <y-m> -0.646 </y-m>
       <z-m>  0.656 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -347,9 +370,6 @@
       <x-m>  2.695 </x-m>
       <y-m> -8.185 </y-m>
       <z-m>  0.752 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -360,9 +380,6 @@
       <x-m> 0.632 </x-m>
       <y-m> 0.646 </y-m>
       <z-m> 0.656 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -372,9 +389,6 @@
       <x-m> 0.632 </x-m>
       <y-m> 0.646 </y-m>
       <z-m> 0.656 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -384,9 +398,6 @@
       <x-m> 2.695 </x-m>
       <y-m> 8.185 </y-m>
       <z-m> 0.752 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -466,12 +477,12 @@
     <property>surface-positions/left-aileron-pos-norm</property>
     <factor> 20 </factor>
     <axis>
-      <x1-m>  1.995 </x1-m>
-      <y1-m> -7.105 </y1-m>
-      <z1-m>  0.707 </z1-m>
-      <x2-m>  1.219 </x2-m>
-      <y2-m> -4.380 </y2-m>
-      <z2-m>  0.583 </z2-m>
+      <x1-m>  2.36109 </x1-m>
+      <y1-m> -8.37531 </y1-m>
+      <z1-m>  0.76589 </z1-m>
+      <x2-m>  1.26869 </x2-m>
+      <y2-m> -4.37991 </y2-m>
+      <z2-m>  0.58106 </z2-m>
     </axis>
   </animation>
 
@@ -481,12 +492,12 @@
     <property>surface-positions/right-aileron-pos-norm</property>
     <factor> 20 </factor>
     <axis>
-      <x1-m> 1.219 </x1-m>
-      <y1-m> 4.380 </y1-m>
-      <z1-m> 0.583 </z1-m>
-      <x2-m> 1.995 </x2-m>
-      <y2-m> 7.105 </y2-m>
-      <z2-m> 0.707 </z2-m>
+      <x1-m> 1.26869 </x1-m>
+      <y1-m> 4.37991 </y1-m>
+      <z1-m> 0.58106 </z1-m>
+      <x2-m> 2.36109 </x2-m>
+      <y2-m> 8.37531 </y2-m>
+      <z2-m> 0.76589 </z2-m>
     </axis>
   </animation>
 
@@ -496,12 +507,12 @@
     <property>surface-positions/left-elevator-pos-norm</property>
     <factor> 20 </factor>
     <axis>
-      <x1-m>  1.995 </x1-m>
-      <y1-m> -7.105 </y1-m>
-      <z1-m>  0.707 </z1-m>
-      <x2-m>  1.219 </x2-m>
-      <y2-m> -4.380 </y2-m>
-      <z2-m>  0.583 </z2-m>
+      <x1-m>  2.36109 </x1-m>
+      <y1-m> -8.37531 </y1-m>
+      <z1-m>  0.76589 </z1-m>
+      <x2-m>  1.26869 </x2-m>
+      <y2-m> -4.37991 </y2-m>
+      <z2-m>  0.58106 </z2-m>
     </axis>
   </animation>
 
@@ -511,12 +522,12 @@
     <property>surface-positions/right-elevator-pos-norm</property>
     <factor> 20 </factor>
     <axis>
-      <x1-m> 1.219 </x1-m>
-      <y1-m> 4.380 </y1-m>
-      <z1-m> 0.583 </z1-m>
-      <x2-m> 1.995 </x2-m>
-      <y2-m> 7.105 </y2-m>
-      <z2-m> 0.707 </z2-m>
+      <x1-m> 1.26869 </x1-m>
+      <y1-m> 4.37991 </y1-m>
+      <z1-m> 0.58106 </z1-m>
+      <x2-m> 2.36109 </x2-m>
+      <y2-m> 8.37531 </y2-m>
+      <z2-m> 0.76589 </z2-m>
     </axis>
   </animation>
 
@@ -607,12 +618,12 @@
     <property>surface-positions/flap-pos-norm</property>
     <factor> -55 </factor>
     <axis>
-      <x1-m>  1.033 </x1-m>
-      <y1-m> -4.380 </y1-m>
-      <z1-m>  0.587 </z1-m>
-      <x2-m>  0.937 </x2-m>
-      <y2-m> -3.171 </y2-m>
-      <z2-m>  0.552 </z2-m>
+      <x1-m>  1.03295 </x1-m>
+      <y1-m> -4.37991 </y1-m>
+      <z1-m>  0.51325 </z1-m>
+      <x2-m>  0.93728 </x2-m>
+      <y2-m> -3.17077 </y2-m>
+      <z2-m>  0.49308 </z2-m>
     </axis>
   </animation>
 
@@ -620,7 +631,7 @@
     <type>rotate</type>
     <object-name>voletD1</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor> -55 </factor>
+    <factor> -40 </factor>
     <axis>
       <x1-m> 1.230 </x1-m>
       <y1-m> 1.596 </y1-m>
@@ -635,14 +646,14 @@
     <type>rotate</type>
     <object-name>voletD2</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor> -55 </factor>
+    <factor> -40 </factor>
     <axis>
-      <x1-m> 0.937 </x1-m>
-      <y1-m> 3.171 </y1-m>
-      <z1-m> 0.552 </z1-m>
-      <x2-m> 1.033 </x2-m>
-      <y2-m> 4.380 </y2-m>
-      <z2-m> 0.587 </z2-m>
+      <x1-m> 0.93728 </x1-m>
+      <y1-m> 3.17077 </y1-m>
+      <z1-m> 0.49308 </z1-m>
+      <x2-m> 1.03295 </x2-m>
+      <y2-m> 4.37991 </y2-m>
+      <z2-m> 0.51325 </z2-m>
     </axis>
   </animation>
 
@@ -832,8 +843,8 @@
     <object-name>porteG2</object-name>
     <property>gear/gear[1]/position-norm</property>
     <interpolation>
-      <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
-      <entry><ind> 1.0 </ind><dep> -95 </dep></entry>
+      <entry><ind> 0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1 </ind><dep> -95 </dep></entry>
     </interpolation>
     <axis>
      <x1-m>  0.716 </x1-m>
@@ -870,8 +881,8 @@
     <object-name>porteD2</object-name>
     <property>gear/gear[2]/position-norm</property>
     <interpolation>
-      <entry><ind> 0.0 </ind><dep>  0 </dep></entry>
-      <entry><ind> 1.0 </ind><dep> 95 </dep></entry>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 95 </dep></entry>
     </interpolation>
     <axis>
      <x1-m> 0.716 </x1-m>
@@ -1084,8 +1095,8 @@
     <object-name>CanopyComplete</object-name>
     <property>instrumentation/doors/crew/position-norm</property>
     <interpolation>
-      <entry><ind> 0.00 </ind><dep> 0.00 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> 0.14 </dep></entry>
+      <entry><ind> 0 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.14 </dep></entry>
     </interpolation>
     <axis>
       <x>  0 </x>
@@ -1099,8 +1110,8 @@
     <object-name>CanopyComplete</object-name>
     <property>instrumentation/doors/crew/position-norm</property>
     <interpolation>
-      <entry><ind> 0.00 </ind><dep> 0.00 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> 0.90 </dep></entry>
+      <entry><ind> 0 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.90 </dep></entry>
     </interpolation>
     <axis>
       <x>  1 </x>
@@ -1147,7 +1158,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Horten-Ho-IX/Models/lights/StrobeWhite.xml</path>
+    <path>Aircraft/Horten-Ho-IX/Models/lights/StrobeLight.xml</path>
     <offsets>
       <x-m>  2.127 </x-m>
       <y-m> -8.340 </y-m>
@@ -1156,7 +1167,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Horten-Ho-IX/Models/lights/StrobeWhite.xml</path>
+    <path>Aircraft/Horten-Ho-IX/Models/lights/StrobeLight.xml</path>
     <offsets>
       <x-m> 2.127 </x-m>
       <y-m> 8.340 </y-m>

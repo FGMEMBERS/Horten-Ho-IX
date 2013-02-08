@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
   <sim  include="Nasal/views.xml">
  
+    <description>Horten Ho IX (YASim)</description>
     <author>Emmanuel BARANGER (3D/FDM)</author>
     <status>alpha</status>
   
@@ -32,15 +33,27 @@
 
     <multiplay>
       <chat_display>1</chat_display>
-      <generic>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
+      <generic> 
+        <int type="int" n="0">  0 </int>                                      <!-- 0 immat -->
+        <int type="int" n="1">  0 </int>                                      <!-- 1 immat -->
+        <int type="int" n="2">  0 </int>                                      <!-- 2 immat -->
+        <int type="int" n="3">  0 </int>                                      <!-- 3 immat -->
+        <int type="int" n="4">  0 </int>                                      <!-- 4 immat -->
+        <int type="int" n="5">  0 </int>                                      <!-- 5 immat -->
+        <int type="bool" n="6"> 1 </int>                                      <!-- 6 smoke/bomb/torpedo -->
+        <int type="int" n="7">  0 </int>                                      <!-- 7 color -->
+        <int n="8" alias="/systems/electrical/outputs/nav-lights">  0 </int>  <!-- 8 nav-lights -->
+        <int n="9" alias="/sim/model/lights/beacon/state">  false </int>      <!-- 9 strobe-lights -->
+        <int n="10" alias="/controls/electric/key-pos">  0 </int>             <!-- 10 key position -->
         <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
-        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>  
+        <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow -->
+        <float n="6" alias="/engines/engine[0]/n1" />
+        <float n="7" alias="/engines/engine[1]/n1" />
+        <float n="8" alias="/controls/engines/engine[0]/throttle" />
+        <float n="9" alias="/controls/engines/engine[1]/throttle" />
+        <string n="0" type="string" />
+        <string n="9" type="string" />                                        <!-- string[9] reserved for bombable mode -->
       </generic>
     </multiplay>
 
@@ -59,7 +72,13 @@
     <menubar include="Dialogs/ho-ix-menu.xml"/>
 
   </sim>
-
+  
+  <yasim>
+    <ho-ix>
+      <pilot-lb>128</pilot-lb>
+    </ho-ix>
+  </yasim>
+  
   <engines>
     <engine n="0">
       <engine-num type="int">0</engine-num>
@@ -93,13 +112,13 @@
   </input>
  
   <nasal>
+    <doors>
+      <file>Aircraft/Horten-Ho-IX/Nasal/doors.nas</file>
+    </doors>
     <hoix>
       <file>Aircraft/Horten-Ho-IX/Nasal/liveries.nas</file>
       <file>Aircraft/Horten-Ho-IX/Nasal/light.nas</file>
     </hoix>
-    <doors>
-      <file>Aircraft/Horten-Ho-IX/Nasal/doors.nas</file>
-    </doors>
     <guns>
       <file>Aircraft/Horten-Ho-IX/Nasal/weapons.nas</file>
       <file>Aircraft/Horten-Ho-IX/Nasal/revi.nas</file>
@@ -107,4 +126,3 @@
   </nasal>
 
 </PropertyList>
-

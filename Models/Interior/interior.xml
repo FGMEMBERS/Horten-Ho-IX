@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -49,9 +49,7 @@
       <x-m> -3.292 </x-m>
       <y-m>  0.000 </y-m>
       <z-m>  0.765 </z-m>
-      <roll-deg>      0 </roll-deg>
       <pitch-deg>   -18 </pitch-deg>
-      <heading-deg>   0 </heading-deg>
     </offsets>
   </model>
 
@@ -69,8 +67,8 @@
     <object-name>IntCanopyComplete</object-name>
     <property>/instrumentation/doors/crew/position-norm</property>
     <interpolation>
-      <entry><ind> 0.00 </ind><dep> 0.00 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> 0.14 </dep></entry>
+      <entry><ind> 0 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.14 </dep></entry>
     </interpolation>
     <axis>
       <x>  0 </x>
@@ -84,8 +82,8 @@
     <object-name>IntCanopyComplete</object-name>
     <property>/instrumentation/doors/crew/position-norm</property>
     <interpolation>
-      <entry><ind> 0.00 </ind><dep> 0.00 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> 0.90 </dep></entry>
+      <entry><ind> 0 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.90 </dep></entry>
     </interpolation>
     <axis>
       <x>  1 </x>
@@ -95,4 +93,3 @@
   </animation>
 
 </PropertyList>
-
