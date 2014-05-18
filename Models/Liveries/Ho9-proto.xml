@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim>
+    
+    <model>
+      <livery>
+        <name type="string">Prototype</name>
+        <texture>texture.png</texture>
+        <emission>
+          <red>   0.09 </red>
+          <green> 0.09 </green>
+          <blue>  0.08 </blue>
+        </emission>
+      </livery>
+      <livery-panel>
+        <texture>Interior/Panel/Liveries/protopanel.png</texture>
+        <diffuse>
+          <red>   1 </red>
+          <green> 1 </green>
+          <blue>  1 </blue>
+        </diffuse>
+        <ambient>
+          <red>   1 </red>
+          <green> 1 </green>
+          <blue>  1 </blue>
+        </ambient>
+        <specular>
+          <red>   1 </red>
+          <green> 1 </green>
+          <blue>  1 </blue>
+        </specular>
+        <emission>
+          <red>   0.005 </red>
+          <green> 0.005 </green>
+          <blue>  0.005 </blue>
+        </emission>
+      </livery-panel>
+    </model>
+    
+  </sim>
+
+</PropertyList>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>switch-ger.ac</path>
+
+  <animation>
+    <object-name>case</object-name>
+    <object-name>switch</object-name>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>case</object-name>
+    <object-name>switch</object-name>
+    <condition>
+      <property>controls/lighting/int-light</property>
+    </condition>
+    <emission>
+      <red>   0.200 </red>
+      <green> 0.175 </green>
+      <blue>  0.140 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>switch</object-name> 
+    <property>controls/switches/arm</property> 
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 60 </dep></entry>
+      <entry><ind> 1 </ind><dep>  0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -0.002 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.000 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>pick</type>
+    <object-name>switch</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/switches/arm</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/armament/master-arm</property>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

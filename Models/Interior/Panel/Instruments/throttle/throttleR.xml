@@ -1,42 +1,36 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
- <path>throttle.ac</path>
-
+  
+  <path>throttle.ac</path>
+  
   <animation>
     <object-name>fond</object-name>
     <object-name>visses</object-name>
     <object-name>face</object-name>
     <object-name>needle</object-name>
-
+    
     <object-name>vitre</object-name>
   </animation>
-
-  <animation>
-    <type>noshadow</type>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Horten-Ho-IX/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitre</object-name>
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitre</object-name>
-  </animation>
-
+  </effect>
+  
   <animation>
     <type>material</type>
     <object-name>face</object-name>
     <object-name>needle</object-name>
     <emission>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
       <red>   0.50 </red>
       <green> 0.25 </green>
       <blue>  0.25 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>needle</object-name>
@@ -51,7 +45,5 @@
       <z>  0 </z>
     </axis>
   </animation>
-
+  
 </PropertyList>
-
-

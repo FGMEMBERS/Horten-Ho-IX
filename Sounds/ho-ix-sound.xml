@@ -1,38 +1,67 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
+<!-- this sound is not what i wanted!!
+     
+     "Lengine" and "Rengine" sound should start at zero and getting louder by thrust
+     it would be nice.  i rl dont get along with this sound configurations....
+-->
 <PropertyList>
 
   <fx>
 
+    <!-- this one --> 
     <engine>
-      <name>engine</name>
-      <path>Sounds/jet.wav</path>
+      <name>Lengine</name>
+      <path>Aircraft/Horten-Ho-IX/Sounds/milpower.wav</path>
       <mode>looped</mode>
       <condition>
         <property>/engines/engine[0]/running</property>
+          <not-equals>
+            <property>sim/crashed</property>
+            <value>true</value>
+          </not-equals>           
       </condition>
       <volume>
-        <property>/engines/engine[0]/prop-thrust</property>
-        <factor type="double">0.00013</factor>
+      <property>/engines/engine/thrust-lbs</property>
+      <factor>0.0004451</factor>
+      </volume>    
+      <volume>
+        <property>/sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.45</factor>
+      </volume>           
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <min>0</min>
+        <max>309</max>
       </volume>
       <pitch>
         <property>/engines/engine[0]/n1</property>
-        <factor>0.2</factor>
+        <factor>-0.2</factor>
       </pitch>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
-     </engine>
-
+    </engine>
+      
     <engine>
-      <name>whine</name>
+      <name>Lwhine</name>
       <path>Sounds/turbojet_fan.wav</path>
       <mode>looped</mode>
       <condition>
         <property>/engines/engine[0]/running</property>
+        <not-equals>
+          <property>sim/crashed</property>
+          <value>true</value>
+        </not-equals>
       </condition>
       <volume>
-        <property>/engines/engine[0]/n2</property>
-        <factor type="double">0.0025</factor>
+        <property>/engines/engine[0]/prop-thrust</property>
+        <factor type="double">0.00181</factor>
+      </volume>
+        <volume>
+        <property>/sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.45</factor>
       </volume>
       <pitch>
         <property>/engines/engine[0]/n2</property>
@@ -40,38 +69,63 @@
         <offset>-0.1</offset>
       </pitch>
       <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+      <max-dist>2500</max-dist>
     </engine>
 
+    <!-- and this one -->   
     <engine>
-      <name>engine</name>
-      <path>Sounds/jet.wav</path>
+      <name>Rengine</name>
+      <path>Aircraft/Horten-Ho-IX/Sounds/milpower.wav</path>
       <mode>looped</mode>
       <condition>
         <property>/engines/engine[1]/running</property>
+          <not-equals>
+          <property>sim/crashed</property>
+          <value>true</value>
+        </not-equals>           
       </condition>
       <volume>
-        <property>/engines/engine[1]/prop-thrust</property>
-        <factor type="double">0.00013</factor>
+        <property>/engines/engine[1]/thrust_lb</property>
+        <factor>0.0004451</factor>
       </volume>
+      <volume>
+        <property>/sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.45</factor>
+      </volume>  
+      <!--volume>
+        <property>/velocities/airspeed-kt</property>
+        <min>0</min>
+        <max>309</max>
+      </volume-->
       <pitch>
         <property>/engines/engine[1]/n1</property>
-        <factor>0.2</factor>
+        <factor>0.002</factor>
       </pitch>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </engine>
 
+    <!-- should start at zero and get louder by thrust, -->      
     <engine>
-      <name>whine</name>
+      <name>Rwhine</name>
       <path>Sounds/turbojet_fan.wav</path>
       <mode>looped</mode>
       <condition>
         <property>/engines/engine[1]/running</property>
+          <not-equals>
+            <property>sim/crashed</property>
+            <value>true</value>
+          </not-equals>           
       </condition>
       <volume>
-        <property>/engines/engine[1]/n2</property>
-        <factor type="double">0.0025</factor>
+        <property>/engines/engine[1]/thrust_lb</property>
+        <factor type="double">0.00229</factor>
+      </volume>
+      <volume>
+        <property>/sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.45</factor>
       </volume>
       <pitch>
         <property>/engines/engine[1]/n2</property>
@@ -79,10 +133,85 @@
         <offset>-0.1</offset>
       </pitch>
       <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+      <max-dist>2500</max-dist>
     </engine>
-
-    <rumble>
+        
+    <!--
+    <out>
+      <name>external whine</name>
+      <path>Sounds/turbojet_fan.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <not>
+          <property>/sim/current-view/internal</property>
+        </not>
+        <property>/engines/engine/running</property>
+      </condition>
+      <orientation>
+        <x>  0.0 </x>
+        <y> -5.0 </y>
+        <z>  0.0 </z>
+        <inner-angle>50.0</inner-angle>
+        <outer-angle>180.0</outer-angle>
+        <outer-gain>0.0</outer-gain>
+      </orientation>
+      <pitch>
+        <property>/engines/engine/n1</property>
+        <ofset>0.7</ofset>
+        <factor>.003</factor>
+      </pitch>
+      <volume>
+        <property>/engines/engine/n1</property>
+        <offset>1.0</offset>
+        <factor>-0.008</factor>
+        <max>0.2</max>
+      </volume>
+      <pitch>
+        <property>/engines/engine[1]/n1</property>
+        <ofset>0.7</ofset>
+        <factor>.003</factor>
+      </pitch>
+      <volume>
+        <property>/engines/engine[1]/n1</property>
+        <offset>1.0</offset>
+        <factor>-0.008</factor>
+        <max>0.2</max>
+      </volume>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <offset>0.1</offset>
+        <factor>0.008</factor>
+        <max>0.6</max>
+      </volume>
+    </out
+    -->
+  
+    <wind>
+      <name>wind</name>
+      <mode>looped</mode>
+      <path>Sounds/wind.wav</path>
+        <condition>
+          <not-equals>
+            <property>sim/crashed</property>
+            <value>true</value>
+          </not-equals>
+        </condition>                    
+      <property>/velocities/airspeed-kt</property>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.002</factor>
+        <max>0.25</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+        <offset>1.25</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1300</max-dist>
+    </wind>
+  
+    <!--rumble>
       <name>rumble</name>
       <mode>looped</mode>
       <path>Sounds/rumble.wav</path>
@@ -115,36 +244,40 @@
       </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
-    </rumble>
+    </rumble-->
 
     <rumble>
       <name>rumble</name>
       <mode>looped</mode>
       <path>Sounds/rumble.wav</path>
       <condition>
-        <property>/gear/gear[2]/wow</property>
+        <or>
+          <property>/gear/gear[2]/wow</property>
+          <property>/gear/gear[1]/wow</property>
+          <property>/gear/gear[0]/wow</property>
+        </or>
       </condition>
       <volume>
         <property>/gear/gear[2]/rollspeed-ms</property>
         <type>log</type>
-        <factor>0.12</factor>
+        <factor>0.42</factor>
       </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+      <reference-dist>20</reference-dist>
+      <max-dist>500</max-dist>
     </rumble>
 
     <gear>
       <name>gear</name>
       <mode>in-transit</mode>
-      <path>Sounds/gear.wav</path>
+      <path>Aircraft/Horten-Ho-IX/Sounds/gear.wav</path>
       <property>/gear/gear[0]/position-norm</property>
       <pitch>
         <internal>dt_play</internal>
         <offset>1.0</offset>
         <factor>-0.001</factor>
       </pitch>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+      <reference-dist>50</reference-dist>
+      <max-dist>200</max-dist>
     </gear>
 
     <gear>
@@ -156,8 +289,8 @@
           <value>0</value>
         </equals>
       </condition>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+      <reference-dist>50</reference-dist>
+      <max-dist>200</max-dist>
     </gear>
 
     <gear>
@@ -169,22 +302,22 @@
           <value>1</value>
         </equals>
       </condition>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+      <reference-dist>50</reference-dist>
+      <max-dist>200</max-dist>
     </gear>
 
     <gear>
       <name>gear</name>
       <mode>in-transit</mode>
-      <path>Sounds/gear.wav</path>
+      <path>Aircraft/Horten-Ho-IX/Sounds/gear.wav</path>
       <property>/gear/gear[1]/position-norm</property>
       <pitch>
         <internal>dt_play</internal>
         <offset>1.0</offset>
         <factor>-0.001</factor>
       </pitch>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+      <reference-dist>50</reference-dist>
+      <max-dist>200</max-dist>
     </gear>
 
     <gear>
@@ -196,8 +329,8 @@
           <value>0</value>
         </equals>
       </condition>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+      <reference-dist>50</reference-dist>
+      <max-dist>200</max-dist>
     </gear>
 
     <gear>
@@ -209,22 +342,22 @@
           <value>1</value>
         </equals>
       </condition>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+      <reference-dist>50</reference-dist>
+      <max-dist>200</max-dist>
     </gear>
 
     <gear>
       <name>gear</name>
       <mode>in-transit</mode>
-      <path>Sounds/gear.wav</path>
+      <path>Aircraft/Horten-Ho-IX/Sounds/gear.wav</path>
       <property>/gear/gear[2]/position-norm</property>
       <pitch>
         <internal>dt_play</internal>
         <offset>1.0</offset>
         <factor>-0.001</factor>
       </pitch>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+      <reference-dist>50</reference-dist>
+      <max-dist>200</max-dist>
     </gear>
 
     <gear>
@@ -236,8 +369,8 @@
           <value>0</value>
         </equals>
       </condition>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+      <reference-dist>50</reference-dist>
+      <max-dist>200</max-dist>
     </gear>
 
     <gear>
@@ -249,15 +382,19 @@
           <value>1</value>
         </equals>
       </condition>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+      <reference-dist>50</reference-dist>
+      <max-dist>200</max-dist>
     </gear>
 
     <squeal>
       <name>squeal</name>
       <path>Sounds/squeal.wav</path>
       <condition>
-        <property>/gear/gear[0]/wow</property>
+        <or>
+          <property>/gear/gear[2]/wow</property>
+          <property>/gear/gear[1]/wow</property>  
+          <property>/gear/gear[0]/wow</property>  
+        </or>
       </condition>
       <volume>
         <property>/velocities/speed-down-fps</property>
@@ -265,63 +402,7 @@
       </volume>
       <volume>
         <property>/velocities/airspeed-kt</property>
-        <factor>0.01</factor>
-      </volume>
-      <volume>
-        <internal>dt_stop</internal>
-        <factor>0.05</factor>
-        <max>1.0</max>
-      </volume>
-      <pitch>
-        <property>/velocities/airspeed-kt</property>
-        <factor>0.0025</factor>
-        <offset>1.2</offset>
-      </pitch>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </squeal>
-
-    <squeal>
-      <name>squeal</name>
-      <path>Sounds/squeal.wav</path>
-      <condition>
-        <property>/gear/gear[1]/wow</property>
-      </condition>
-      <volume>
-        <property>/velocities/speed-down-fps</property>
-        <factor>0.05</factor>
-      </volume>
-      <volume>
-        <property>/velocities/airspeed-kt</property>
-        <factor>0.01</factor>
-      </volume>
-      <volume>
-        <internal>dt_stop</internal>
-        <factor>0.05</factor>
-        <max>1.0</max>
-      </volume>
-      <pitch>
-        <property>/velocities/airspeed-kt</property>
-        <factor>0.0025</factor>
-        <offset>1.2</offset>
-      </pitch>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </squeal>
-
-    <squeal>
-      <name>squeal</name>
-      <path>Sounds/squeal.wav</path>
-      <condition>
-        <property>/gear/gear[2]/wow</property>
-      </condition>
-      <volume>
-        <property>/velocities/speed-down-fps</property>
-        <factor>0.05</factor>
-      </volume>
-      <volume>
-        <property>/velocities/airspeed-kt</property>
-        <factor>0.01</factor>
+        <factor>0.051</factor>
       </volume>
       <volume>
         <internal>dt_stop</internal>
@@ -343,90 +424,35 @@
       <path>Sounds/flaps.wav</path>
       <property>/surface-positions/left-flap-pos-norm</property>
       <volume>
-        <factor>0.15</factor>
+        <factor>0.49</factor>
       </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+      <reference-dist>50</reference-dist>
+      <max-dist>200</max-dist>
     </flap>
 
     <flap>
-      <name>flaps</name>
+      <name>flaps2</name>
       <mode>in-transit</mode>
       <path>Sounds/flaps.wav</path>
       <property>/surface-positions/right-flap-pos-norm</property>
       <volume>
-        <factor>0.25</factor>
+        <factor>0.49</factor>
       </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+      <reference-dist>50</reference-dist>
+      <max-dist>200</max-dist>
     </flap>
 
-    <spoiler>
-      <name>spoilers</name>
+    <airbrake>
+      <name>airbrake</name>
       <mode>in-transit</mode>
       <path>Sounds/flaps.wav</path>
-      <property>/surface-positions/left-lower-spoiler-pos-norm</property>
+      <property>/surface-positions/speedbrake-norm</property>
       <volume>
-        <factor>0.15</factor>
+        <factor>0.59</factor>
       </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </spoiler>
-
-    <spoiler>
-      <name>spoilers</name>
-      <mode>in-transit</mode>
-      <path>Sounds/flaps.wav</path>
-      <property>/surface-positions/left-upper-spoiler-pos-norm</property>
-      <volume>
-        <factor>0.15</factor>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </spoiler>
-
-    <spoiler>
-      <name>spoilers</name>
-      <mode>in-transit</mode>
-      <path>Sounds/flaps.wav</path>
-      <property>/surface-positions/right-lower-spoiler-pos-norm</property>
-      <volume>
-        <factor>0.25</factor>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </spoiler>
-
-    <spoiler>
-      <name>spoilers</name>
-      <mode>in-transit</mode>
-      <path>Sounds/flaps.wav</path>
-      <property>/surface-positions/right-upper-spoiler-pos-norm</property>
-      <volume>
-        <factor>0.25</factor>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </spoiler>
-
-    <wind>
-      <name>wind</name>
-      <mode>looped</mode>
-      <path>Sounds/wind.wav</path>
-      <property>/velocities/airspeed-kt</property>
-      <volume>
-        <property>/velocities/airspeed-kt</property>
-        <factor>0.002</factor>
-        <max>0.25</max>
-      </volume>
-      <pitch>
-        <property>/velocities/airspeed-kt</property>
-        <factor>0.01</factor>
-        <offset>1.25</offset>
-      </pitch>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </wind>
+      <reference-dist>50</reference-dist>
+      <max-dist>200</max-dist>
+    </airbrake>
 
     <stall>
       <name>stall</name>
@@ -436,14 +462,14 @@
         <property>/velocities/airspeed-kt</property>
         <min>90.0</min>
       </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+      <reference-dist>10</reference-dist>
+      <max-dist>100</max-dist>
     </stall>
 
     <gun>
       <name>Gun up left</name>
       <mode>looped</mode>
-      <path>Aircraft/Horten-Ho-IX/Sounds/gunfire_1.wav</path>
+      <path>Aircraft/Horten-Ho-IX/Sounds/gunfire.wav</path>
       <condition>
         <and>
           <property>controls/armament/trigger</property>
@@ -456,13 +482,13 @@
         <z>  0.414 </z>
       </position>
       <reference-dist>100</reference-dist>
-      <max-dist>500</max-dist>
+      <max-dist>1500</max-dist>
     </gun>
 
     <gun>
       <name>Gun up right</name>
       <mode>looped</mode>
-      <path>Aircraft/Horten-Ho-IX/Sounds/gunfire_1.wav</path>
+      <path>Aircraft/Horten-Ho-IX/Sounds/gunfire.wav</path>
       <condition>
         <and>
           <property>controls/armament/trigger</property>
@@ -475,47 +501,68 @@
         <z>  0.414 </z>
       </position>
       <reference-dist>100</reference-dist>
-      <max-dist>500</max-dist>
+      <max-dist>1500</max-dist>
     </gun>
 
-    <gun>
-      <name>Gun down left</name>
-      <mode>looped</mode>
-      <path>Aircraft/Horten-Ho-IX/Sounds/gunfire_1.wav</path>
+    <oceant>
+      <name>Birdsens</name>
+      <delay-sec>0</delay-sec>
+      <path>Sounds/thunder.wav</path>
       <condition>
-        <and>
-          <property>controls/armament/trigger</property>
-          <property>ai/submodels/submodel[0]/count</property>
-        </and>
+        <property>sim/crashed</property>
+        <value>true</value>       
       </condition>
-      <position>
-        <x> -5.084 </x>
-        <y> -0.306 </y>
-        <z>  0.237 </z>
-      </position>
-      <reference-dist>100</reference-dist>
-      <max-dist>500</max-dist>
-    </gun>
-
-    <gun>
-      <name>Gun down left</name>
+      <volume>
+        <property>sim/sound/avionics/volume</property>
+      </volume>
+    </oceant>
+        
+    <ocean>
+      <name>Birdsens2</name>
       <mode>looped</mode>
-      <path>Aircraft/Horten-Ho-IX/Sounds/gunfire_1.wav</path>
+      <delay-sec>10</delay-sec>
+      <path>Aircraft/Horten-Ho-IX/Sounds/wave.wav</path>
       <condition>
-        <and>
-          <property>controls/armament/trigger</property>
-          <property>ai/submodels/submodel[0]/count</property>
-        </and>
+        <property>sim/crashed</property>
+        <value>true</value>       
       </condition>
-      <position>
-        <x> -5.084 </x>
-        <y>  0.306 </y>
-        <z>  0.237 </z>
-      </position>
+      <volume>
+        <property>sim/sound/avionics/volume</property>
+      </volume>
+    </ocean>
+        
+    <!--
+    <Radio>
+      <name>Signal</name>
+      <mode>looped</mode>
+      <type>avionics</type>
+      <path>Aircraft/Horten-Ho-IX/Sounds/radio.wav</path>
+      <condition>
+        <property>sim/signals/search</property>
+        <value>1</value>          
+      </condition>
+      <volume>
+        <offset>1</offset>
+        <factor>1</factor>
+      </volume>
+    </Radio>
+    -->
+        
+    <!-- CANOPY -->
+    <canopy> 
+      <name>canopy slide</name>
+      <mode>in-transit</mode>
+      <path>Aircraft/Horten-Ho-IX/Sounds/canopy_slide.wav</path>
+      <property>sim/model/door-positions/crew/position-norm</property>
+      <volume> 
+        <factor>0.3</factor>
+      </volume>
+      <reference-dist>10</reference-dist>
+      <max-dist>20</max-dist>
       <reference-dist>100</reference-dist>
-      <max-dist>500</max-dist>
-    </gun>
-
+      <max-dist>1000</max-dist>
+    </canopy>
+    
   </fx>
 
 </PropertyList>

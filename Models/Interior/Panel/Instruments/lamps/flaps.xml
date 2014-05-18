@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>flaps.ac</path>
+ 
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>socket</object-name>
+    <object-name>lamp0</object-name>
+    <object-name>lamp1</object-name>
+    <object-name>lamp2</object-name>
+    
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>lamp0</object-name>
+    <condition>
+      <less-than>
+        <property>/surface-positions/flap-pos-norm</property>
+        <value>-0.666</value>
+      </less-than>
+      <greater-than>
+        <property>/surface-positions/flap-pos-norm</property>
+        <value>-0.699</value>
+      </greater-than>
+    </condition>
+    <emission>
+      <red>   0.25 </red>
+      <green> 2.00 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>lamp1</object-name>
+    <condition>
+      <less-than>
+        <property>/surface-positions/flap-pos-norm</property>
+        <value>-0.666</value>
+      </less-than>
+      <greater-than>
+        <property>/surface-positions/flap-pos-norm</property>
+        <value>-0.699</value>
+      </greater-than>
+    </condition>
+    <emission>
+      <red>   0.25 </red>
+      <green> 2.00 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>lamp2</object-name>
+    <condition>
+      <less-than>
+        <property>/surface-positions/flap-pos-norm</property>
+        <value>-0.999</value>
+      </less-than>
+    </condition>  
+    <emission>
+      <red>   0.25 </red>
+      <green> 2.00 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+</PropertyList>

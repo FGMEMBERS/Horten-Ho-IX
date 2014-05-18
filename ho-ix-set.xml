@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!-- <PropertyList include="ho-ix-jsbsim-cnf.xml"> -->
-<PropertyList include="ho-ix-yasim-cnf.xml">
+<PropertyList include="ho-ix-base.xml">
 
   <sim>
     
-    <description>Horten Ho IX (YASim)</description>
-    <author>Emmanuel BARANGER (3D/FDM)</author>
+    <description>Horten Ho IX/Gotha Ho 229 V3 (YASim)</description>
+    <author>helijah, voodoo, Cpt Goosnen, Cpt Haddock</author>
+    <flight-model>yasim</flight-model>
+    <aero>ho-ix-yasim</aero>
     
     <rating>
       <FDM type="int">     3 </FDM>
-      <systems type="int"> 1 </systems>
+      <systems type="int"> 2 </systems>
       <cockpit type="int"> 3 </cockpit>
       <model type="int">   4 </model>
     </rating>
-    
+   
   </sim>
 
 </PropertyList>
-

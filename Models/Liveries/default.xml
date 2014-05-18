@@ -13,12 +13,30 @@
           <green> 0.05 </green>
           <blue>  0.05 </blue>
         </specular>
-        <emission>
-          <red>   0.1 </red>
-          <green> 0.1 </green>
-          <blue>  0.1 </blue>
-        </emission>
       </livery>
+      <livery-panel>
+        <texture>Interior/Panel/panel.png</texture>
+        <diffuse>
+          <red>   1 </red>
+          <green> 1 </green>
+          <blue>  1 </blue>
+        </diffuse>
+        <ambient>
+          <red>   1 </red>
+          <green> 1 </green>
+          <blue>  1 </blue>
+        </ambient>
+        <specular>
+          <red>   1 </red>
+          <green> 1 </green>
+          <blue>  1 </blue>
+        </specular>
+        <emission>
+          <red>   0.002 </red>
+          <green> 0.002 </green>
+          <blue>  0.002 </blue>
+        </emission>
+      </livery-panel>
     </model>
     
   </sim>

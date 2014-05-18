@@ -1,0 +1,86 @@
+WARNING: sound got a little loud 
+ive include a sound/volume/0.2 code for that
+
+-------Changelog------
+
+FDM:
+More Fuselag and Wing segments
+more rl values
+an airbrake (all by haddock)
+Rudderflaps included to airbrake.... (just one big slat (2 at the rudder positions) 
+                                     which simulate the both upper and downer ones)
+
+Cockpit:
+complete Texture overhaul
+ignition switches (not used for the mom. but the right one is used for master arm)
+fuel reserve indicator lights
+flap pos. indicator lights
+shutoff button (just could it deselecting the fueltanks - turbines still running - but no thrust)
+gear indicator (not orig. but will become)
+
+Effects:
+Afterburner (default is deselected cause the early Jets didnt have one) 
+Glow (property is oiltemp-norm)
+Smoke (one for low speed/Ground; and two for +50knts till 13000ft for each Turbine)
+Contrail above 22000ft
+
+Model/Animations:
+Airbrake Model and animation by Cpt Haddock
+Spoiler animation by Cpt Goosnen
+
+Sound:
+One Sound for each Turbine
+(i dont rl know whats happend, just tryed to let the repeat effect of the jet.wav disappear...
+but it gots amazingly loud and even when this effect has gone, the effect which makes the jet.wav getting louder
+by thrust has gone also now :~( if anyone can solve this, feel free to contact me "cpt Goosnen" in FG Forum! thx)
+
+Liveries:
+nearly all overhauled and some new
+(Camo3, Prototype...)
+
+Keyboard:
+Keys for trim and center trim
+default Airbrake key (CTRL-B) and one for little hands^^ (tab)
+Nav1-lock and Glideslope Keys disabled (confuses by hasty landings)
+(i tryed to configure other keys for both, but without success... 
+if u want em back just delete the both last keys in the keybord.nas)
+
+
+others:
+Help dialog
+selectable afterburner
+selectable shadow 
+
+----------Changelog End------------ ------- ------- ------- ---- which not other diclared by Cpt Goosnen 2013 ----
+
+This is a developer preview version, 
+FDM has become more real datas, via "Cpt Haddock's" rework
+if u wish the old yasim, just take the yasim file in the "alte-Ho-IX" folder
+there are all files which changed in the original state (helijahs last update feb 2013)
+
+Notes:
+
+if u have problems with takeoff, try a 100% flat runway (i think thats an yasim bug, but im not shure)
+also full Elevator!!! which u hopefully done already ;) and steer with brakes rather than rudder !!!
+
+-take off Key Procedure-
+Hold "page up" some seconds
+Hold "2" some seconds
+push shift-b
+
+thats it..
+
+The indicator lights for flaps ar not original, in the V2 prototypes they had have a "rollschauzeichen" that means 
+it was a simple sign, not a light... but i think when they had have build the V3 they surly had used lights.... 
+the panel isnt ready..
+
+and the 2 switshes for lights at the left, i have include for that u can choose if lights or not ;)
+left one is Taxi Lights, right one Nav Lights
+
+it isnt ready!!!
+just preview!!
+
+Contact "Cpt Goosnen" in FG Forum for all kind of critic or help!
+
+thanks and have a nice flight
+Goos

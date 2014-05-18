@@ -1,34 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
+  
   <path>WhiteLight.ac</path>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>Light</object-name>
-  </animation>
-
-  <!-- Transparency for Rembrandt -->
+  
   <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>Light</object-name>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
   </effect>
-
+  
   <animation>
     <type>alpha-test</type>
     <alpha-factor>0.01</alpha-factor>
   </animation>
-
+  
   <animation>
     <type>billboard</type>
     <object-name>Light</object-name>
     <spherical type="bool">true</spherical>
   </animation>
-
+  
   <animation>
     <type>select</type>
     <object-name>Light</object-name>
@@ -36,7 +27,7 @@
       <property>/sim/model/lights/sbc1/state</property>
     </condition>
   </animation>
-
+  
   <animation>
     <type>material</type>
     <object-name>Light</object-name>
@@ -46,23 +37,45 @@
       <blue>  2 </blue>
     </emission>
   </animation>
-
+  
   <animation>
     <type>dist-scale</type>
     <object-name>Light</object-name>
     <interpolation>
-      <entry><ind>    0 </ind><dep> 0.25 </dep></entry>
-      <entry><ind>   20 </ind><dep> 0.50 </dep></entry>
+      <entry><ind>    0 </ind><dep> 0.15 </dep></entry>
+      <entry><ind>   20 </ind><dep> 0.24 </dep></entry>
       <entry><ind> 1500 </ind><dep> 5.00 </dep></entry>
+      <entry><ind> 25000</ind><dep>25.00 </dep></entry>
     </interpolation>
   </animation>
-
+  
+  <animation>
+    <type>flash</type>
+    <object-name>Light</object-name>
+    <center>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+    <power>4</power>
+    <factor>1</factor>
+    <offset>0.4</offset>
+    <two-sides type="bool">false</two-sides>
+    <min>0.01</min>
+    <max>1</max>
+  </animation>
+  
   <animation>
     <type>select</type>
     <object-name>Light</object-name>
     <condition>
-      <property>controls/lighting/nav-lights</property>
+      <property>controls/lighting/tax-lights</property>
     </condition>
   </animation>
-
+  
 </PropertyList>

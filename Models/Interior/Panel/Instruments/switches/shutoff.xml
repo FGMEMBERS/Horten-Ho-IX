@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>shutoff.ac</path>
+
+  <animation>
+    <object-name>case</object-name>
+    <object-name>button</object-name>
+    <object-name>screws</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>button</object-name>
+    <emission>
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <red>   0.10 </red>
+      <green> 0.20 </green>
+      <blue>  0.20 </blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <type>translate</type>
+    <object-name>button</object-name>
+    <property>consumables/fuel/tank[1]/selected</property>
+    <factor> 0.0025 </factor>
+    <binding>
+      <command>property-toggle</command>
+      <property>consumables/fuel/tank[0]/selected</property>
+    </binding> 
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>                                                              
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>button</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>consumables/fuel/tank[0]/selected</property>
+        <value>false</value>
+      </binding>     
+      <binding>
+        <command>property-toggle</command>
+        <property>consumables/fuel/tank[1]/selected</property>
+        <value>false</value>
+      </binding>    
+      <binding>
+        <command>property-toggle</command>
+        <property>consumables/fuel/tank[2]/selected</property>
+        <value>false</value>
+      </binding>     
+      <binding>
+        <command>property-toggle</command>
+        <property>consumables/fuel/tank[3]/selected</property>
+        <value>false</value>
+      </binding>    
+      <binding>
+        <command>property-toggle</command>
+        <property>consumables/fuel/tank[4]/selected</property>
+        <value>false</value>
+      </binding>     
+      <binding>
+        <command>property-toggle</command>
+        <property>consumables/fuel/tank[5]/selected</property>
+        <value>false</value>
+      </binding>  	      
+      <binding>
+        <command>property-toggle</command>
+        <property>consumables/fuel/tank[6]/selected</property>
+        <value>false</value>
+      </binding>     
+      <binding>
+        <command>property-toggle</command>
+        <property>consumables/fuel/tank[7]/selected</property>
+        <value>false</value>
+      </binding>  
+    </action>
+  </animation> 
+  
+</PropertyList>
