@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <path>flammes.ac</path>
+  
+  <animation>
+    <!-- Objets transparents -->
+    <object-name>brule</object-name>
+  </animation>
+  
+  <animation>
+    <type>noshadow</type>
+    <object-name>brule</object-name>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>flamme1</object-name>
+    <object-name>flamme2</object-name>
+    <object-name>flamme3</object-name>
+    <condition>
+      <greater-than>
+        <!-- controls/engines/engine[1]/throttle -->
+        <property>sim/multiplay/generic/float[9]</property>
+        <value>10</value>
+      </greater-than>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>brule</object-name>
+    <condition>
+      <greater-than>
+        <!-- /engines/engine[1]/oilt-norm -->
+        <property>sim/multiplay/generic/float[17]</property>
+        <value>0.000042</value>
+      </greater-than>
+      <not-equals>
+        <property>sim/crashed</property>
+        <value>true</value>
+      </not-equals>   
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>brule</object-name>
+    <transparency>
+      <!-- /engines/engine[1]/oilt-norm -->
+      <alpha-prop>sim/multiplay/generic/float[17]</alpha-prop>
+      <factor>1.1</factor>
+      <offset>-0.2</offset>
+    </transparency> 
+    <emission>
+      <!-- /engines/engine[1]/oilt-norm -->
+      <factor-prop>sim/multiplay/generic/float[17]</factor-prop>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission> 
+  </animation>
+  
+</PropertyList>

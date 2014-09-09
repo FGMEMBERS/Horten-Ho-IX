@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <default>
+    <menu n="10">
+      <label>Horten Ho IX/Gotha Ho 229 V3</label>
+      <enabled type="bool">true</enabled>
+      <item>
+        <label>Select Livery</label>
+        <binding>
+          <command>nasal</command>
+          <script>aircraft.livery.dialog.toggle()</script>
+        </binding>
+      </item>
+      <item>
+        <label>Options</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            var options = gui.Dialog.new("sim/gui/dialogs/options/dialog", 
+            "Aircraft/Horten-Ho-IX/Dialogs/options-dlg.xml");
+            options.open();
+          </script>
+        </binding>
+      </item>
+<!--
+      <item>
+        <label>Immatriculation</label>
+        <binding>
+          <command>nasal</command>
+          <script>......immat_dialog.toggle()</script>
+        </binding>
+      </item>
+-->
+    </menu>
+  </default>
+
+</PropertyList>
+

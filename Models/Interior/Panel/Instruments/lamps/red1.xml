@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>indlight.ac</path>
+ 
+  <animation>
+    <object-name>socket</object-name>
+    <object-name>lamp</object-name>
+    
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>lamp</object-name>
+    <condition>
+      <less-than>
+        <property>consumables/fuel/tank[0]/level-kg</property>
+        <value>100.8</value>
+      </less-than>
+    </condition>
+    <emission>
+      <red>   2.000 </red>
+      <green> 0.025 </green>
+      <blue>  0.025 </blue>
+    </emission>
+  </animation>
+
+</PropertyList>

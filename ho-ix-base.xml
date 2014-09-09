@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim  include="Systems/views.xml">
+ 
+    <description>Horten Ho IX/Gotha Ho 229 V3 (YASim)</description>
+    <author>helijah, voodoo, Cpt Goosnen, Cpt Haddock</author>
+    <status>alpha</status>
+  
+    <fuel-fraction>0.75</fuel-fraction>
+  
+    <model>
+      <path>Aircraft/Horten-Ho-IX/Models/ho-ix.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+    
+    <sound>
+      <audible>true</audible>
+      <effects>
+        <volume>0.16</volume>
+      </effects>
+      <avionics>
+        <volume>1</volume>
+        <external>false</external>
+      </avionics>
+      <path>Aircraft/Horten-Ho-IX/Sounds/ho-ix-sound.xml</path>
+    </sound>
+
+    <airport>
+      <runways>
+        <start-offset-m>77</start-offset-m>
+      </runways>
+    </airport>
+    
+    <submodels> 
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/Horten-Ho-IX/Models/Effects/guns/submodels.xml</path>
+    </submodels>
+
+    <startup>
+     <splash-texture>Aircraft/Horten-Ho-IX/ho-ix-splash.png</splash-texture>
+    </startup>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int n="0"    type="int">  0 </int>                                              <!-- 0 immat -->
+        <int n="1"    type="int">  0 </int>                                              <!-- 1 immat -->
+        <int n="2"    type="int">  0 </int>                                              <!-- 2 immat -->
+        <int n="3"    type="int">  0 </int>                                              <!-- 3 immat -->
+        <int n="4"    type="int">  0 </int>                                              <!-- 4 immat -->
+        <int n="5"    type="int">  0 </int>                                              <!-- 5 immat -->
+        <int n="6"    type="bool" alias="/smoke/active"> 0 </int>                        <!-- 6 start smoke -->
+        <int n="7"    type="int" alias="smoke/particlepersec"> 50 </int>                 <!-- 7 particlepersec -->
+        <int n="8"    type="int" alias="/systems/electrical/outputs/nav-lights">0</int>  <!-- 8 nav-lights -->
+        <int n="9"    type="int" alias="/sim/model/lights/beacon/state">false</int>      <!-- 9 strobe-lights -->
+        <float n="0"  alias="/sim/model/door-positions/crew/position-norm"/>
+        <float n="1"  alias="/sim/model/door-positions/passenger/position-norm"/>
+        <float n="2"  alias="/position/gear-agl-m"> 0 </float>                           <!-- altitude for MP shadow -->
+        <float n="3"  alias="/position/altitude-ft"> 0 </float>                          <!-- altitude for Smoke/Trail -->
+        <float n="4"  alias="/engines/engine[0]/n1"/>
+        <float n="5"  alias="/engines/engine[1]/n1"/>
+        <float n="6"  alias="/engines/engine[0]/n2"/>
+        <float n="7"  alias="/engines/engine[1]/n2"/>
+        <float n="8"  alias="/controls/engines/engine[0]/throttle"/>
+        <float n="9"  alias="/controls/engines/engine[1]/throttle"/>
+        <float n="10" alias="/gear/gear[0]/wow"/>
+        <float n="11" alias="/gear/gear[1]/wow"/>
+        <float n="12" alias="/gear/gear[2]/wow"/>
+        <float n="13" alias="/gear/gear[0]/rollspeed-ms"/>
+        <float n="14" alias="/gear/gear[1]/rollspeed-ms"/>
+        <float n="15" alias="/gear/gear[2]/rollspeed-ms"/>
+        <float n="16" alias="/engines/engine[0]/oilt-norm"/>
+        <float n="17" alias="/engines/engine[1]/oilt-norm"/>
+        <!-- For Bombable -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>
+        <string n="9" type="string" />
+      </generic>
+    </multiplay>
+    
+    <help include="Systems/help.xml"/>
+
+    <menubar include="Dialogs/ho-ix-menu.xml"/>
+
+  </sim>
+  
+  <!-- Set 
+  <consumables>
+   <fuel>
+     <tank n="0">
+       <name>1</name>
+       <selected type="bool">false</selected>
+     </tank>
+     <tank n="1">
+       <name>2</name>
+       <selected type="bool">false</selected>
+     </tank>
+     </fuel>
+  </consumables>
+  -->
+
+  <yasim>
+    <ho-ix>
+      <pilot-lb>128</pilot-lb>
+    </ho-ix>
+  </yasim>
+
+  <autopilot>
+    <config>
+      <min-climb-speed-kt type="float">200.0</min-climb-speed-kt>
+      <best-climb-speed-kt type="float">420.0</best-climb-speed-kt>
+      <target-climb-rate-fpm type="float">4100.0</target-climb-rate-fpm>
+      <target-descent-rate-fpm type="float">6000.0</target-descent-rate-fpm>
+      <elevator-adj-factor type="float">6000.0</elevator-adj-factor>
+      <aileron-adj-factor type="float">6000.0</aileron-adj-factor>
+      <integral-contribution type="float">0.5</integral-contribution>
+      <zero-pitch-throttle type="float">0.15</zero-pitch-throttle>
+      <zero-pitch-trim-full-throttle type="float">0.001</zero-pitch-trim-full-throttle>
+    </config>
+    <settings>
+      <target-altitude-ft>52000</target-altitude-ft>
+    </settings>
+  </autopilot>
+
+  <controls>
+    <armament>
+      <trigger type="bool">false</trigger>
+      <master-arm type="bool">false</master-arm>
+      <position-norm type="int">1</position-norm>
+    </armament>
+    <lighting>
+      <nav-lights>false</nav-lights>
+      <tax-lights>false</tax-lights>
+      <panel-norm>1</panel-norm>
+    </lighting>
+    <gear>
+      <brake-parking>1</brake-parking>
+    </gear>
+  </controls>
+
+  <input>
+    <keyboard include="Systems/ho-ix-keyboard.xml"/>
+  </input>
+ 
+  <!-- These n1/n2 values are used in place of FDM values in order to simulate engine
+       startup/shutdown procedures. During normal engine operation, FDM values are mapped
+       to these values, but all animations are based on these 'actual' values.
+       State: off (0), startup stage 1 (1), startup stage 2 (2), running (3), shutdown (4)
+  -->
+  <!--
+  <engines>
+    <engine n="0">
+      <fuel-flow-pph type="float">0.0</fuel-flow-pph>
+      <n1-actual type="float">0.0</n1-actual>
+      <n2-actual type="float">0.0</n2-actual>
+      <state type="int">0</state>
+    <running>false</running>
+    </engine>
+    <engine n="1">
+      <fuel-flow-pph type="float">0.0</fuel-flow-pph>
+      <n1-actual type="float">0.0</n1-actual>
+      <n2-actual type="float">0.0</n2-actual>
+      <state type="int">0</state>
+    <running>false</running>
+    </engine>
+      <engine n="7">
+      <fuel-flow-pph type="float">0.0</fuel-flow-pph>
+      <n1-actual type="float">0.0</n1-actual>
+      <n2-actual type="float">0.0</n2-actual>
+      <state type="int">0</state>
+    <running>false</running>
+    </engine>
+  </engines>
+  -->
+
+  <nasal>
+    <doors>
+      <file>Aircraft/Horten-Ho-IX/Nasal/doors.nas</file>
+    </doors>
+    <hoix>
+      <file>Aircraft/Horten-Ho-IX/Nasal/liveries.nas</file>
+      <file>Aircraft/Horten-Ho-IX/Nasal/light.nas</file>
+    </hoix>
+    <guns>
+      <file>Aircraft/Horten-Ho-IX/Nasal/weapons.nas</file>
+      <file>Aircraft/Horten-Ho-IX/Nasal/revi.nas</file>
+    </guns>
+    <!--
+    engines>
+      <file>Aircraft/Horten-Ho-IX/Nasal/engines.nas</file>
+    </engines>
+    -->
+  </nasal>
+
+</PropertyList>

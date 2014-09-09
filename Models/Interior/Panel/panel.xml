@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>panel.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>panel</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/afn/afn.xml</path>
+    <offsets>
+      <x-m>  0.1645 </x-m>
+      <y-m>  0.0530 </y-m>
+      <z-m> -0.0150 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <offsets>
+      <x-m> 0.165 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.051 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m>  0.1635 </x-m>
+      <y-m> -0.0660 </y-m>
+      <z-m> -0.0100 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m> 0.1635 </x-m>
+      <y-m> 0.0630 </y-m>
+      <z-m> 0.0400 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/compass/compass.xml</path>
+    <offsets>
+      <x-m>  0.1635 </x-m>
+      <y-m>  0.0000 </y-m>
+      <z-m> -0.0190 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/egt/egtR.xml</path>
+    <offsets>
+      <x-m>  0.164 </x-m>
+      <y-m>  0.071 </y-m>
+      <z-m> -0.057 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/egt/egtL.xml</path>
+    <offsets>
+      <x-m>  0.164 </x-m>
+      <y-m> -0.079 </y-m>
+      <z-m> -0.057 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/fuel/fuelL.xml</path>
+    <offsets>
+      <x-m>  0.164 </x-m>
+      <y-m>  0.091 </y-m>
+      <z-m> -0.005 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/fuel/fuelR.xml</path>
+    <offsets>
+      <x-m>  0.164 </x-m>
+      <y-m>  0.127 </y-m>
+      <z-m> -0.005 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/gear/gear.xml</path>
+    <offsets>
+      <x-m>  0.162 </x-m>
+      <y-m> -0.140 </y-m>
+      <z-m>  0.023 </z-m>
+    </offsets>
+  </model>
+  
+  <!--   flaplights  -->
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/lamps/flaps.xml</path> 
+    <offsets>
+      <x-m>  0.162 </x-m>
+      <y-m> -0.105 </y-m>
+      <z-m> -0.011 </z-m>
+    </offsets>
+  </model>
+  
+  <!--    Fuellight   -->
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/lamps/red1.xml</path> 
+    <offsets>
+      <x-m> 0.1630 </x-m>
+      <y-m> 0.0950 </y-m>
+      <z-m> 0.0212 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/lamps/red2.xml</path> 
+    <offsets>
+      <x-m> 0.1630 </x-m>
+      <y-m> 0.1230 </y-m>
+      <z-m> 0.0212 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- o2 -->
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/o2/o2pression.xml</path>
+    <offsets>
+      <x-m>  0.1640 </x-m>
+      <y-m> -0.0225 </y-m>
+      <z-m> -0.1225 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/o2/o2guard.xml</path>
+    <offsets>
+      <x-m>  0.1640 </x-m>
+      <y-m>  0.0225 </y-m>
+      <z-m> -0.1222 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/pression/pressionL.xml</path>
+    <offsets>
+      <x-m>  0.164 </x-m>
+      <y-m> -0.116 </y-m>
+      <z-m> -0.057 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/pression/pressionR.xml</path>
+    <offsets>
+      <x-m>  0.164 </x-m>
+      <y-m>  0.109 </y-m>
+      <z-m> -0.057 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/revi/revi.xml</path>
+    <offsets>
+      <x-m> 0.194 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.152 </z-m>
+      <pitch-deg> 18 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/throttle/throttleL.xml</path>
+    <offsets>
+      <x-m>  0.1635 </x-m>
+      <y-m> -0.0260 </y-m>
+      <z-m> -0.0800 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/throttle/throttleR.xml</path>
+    <offsets>
+      <x-m>  0.1635 </x-m>
+      <y-m>  0.0260 </y-m>
+      <z-m> -0.0800 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <offsets>
+      <x-m>  0.164 </x-m>
+      <y-m> -0.063 </y-m>
+      <z-m>  0.040 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- switches -->
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/switches/eng1.xml</path>
+    <offsets>
+      <x-m>  0.166 </x-m>
+      <y-m> -0.112 </y-m>
+      <z-m>  0.036 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/switches/eng2.xml</path> <!-- master arm -->
+    <offsets>
+      <x-m>  0.166 </x-m>
+      <y-m> -0.098 </y-m>
+      <z-m>  0.036 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/switches/shutoff.xml</path>
+    <offsets>
+      <x-m>  0.166 </x-m>
+      <y-m> -0.140 </y-m>
+      <z-m> -0.009 </z-m>
+      <roll-deg> 90 </roll-deg> 
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/switches/tax.xml</path>
+    <offsets>
+      <x-m>  0.222 </x-m>
+      <y-m> -0.335 </y-m>
+      <z-m> -0.032 </z-m>	 
+      <heading-deg> 90 </heading-deg> 
+    </offsets>
+  </model>
+ 
+  <model>
+    <path>Aircraft/Horten-Ho-IX/Models/Interior/Panel/Instruments/switches/nav.xml</path>
+    <offsets>
+      <x-m>  0.250 </x-m>
+      <y-m> -0.340 </y-m>
+      <z-m> -0.030 </z-m>
+      <heading-deg> 90 </heading-deg> 
+    </offsets>
+  </model>
+  
+</PropertyList>

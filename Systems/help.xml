@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <title>Horten 229 keys + notes</title>
+  <line>______________________________________________</line>
+  <key>
+    <name>"d"</name>
+    <desc>Canopy</desc>
+  </key>
+  <key>
+    <name>"e"</name>
+    <desc>MK</desc>
+  </key>
+  <key>
+    <name>"ctrl-b" + "tab"</name>
+    <desc>speedbrake</desc>
+  </key>
+  <key>
+    <name>"/" + "*"</name>
+    <desc>Rolltrim</desc>
+  </key>
+  <key>
+    <name>"pos1" + "End"</name>
+    <desc>Pitchtrim</desc>
+  </key>
+  <key>
+    <name>"#"</name>
+    <desc>center trim</desc>
+  </key>
+  <key>
+    <name>left switch</name>
+    <desc>Nav-Lights</desc>
+  </key>
+  <key>
+    <name>right switch</name>
+    <desc>Taxi-Lights</desc>
+  </key>
+  <line>Notes:</line>
+  <line></line>
+  <line>Dont Use Center Keys ("5" + "#") In Flight!</line>
+  <line></line>
+  <line>A flying wing has no such stability like aircraft's with empennage!</line>
+  <line>If u want to use Rudder u choose small spoiler at the wing tips.</line>
+  <line>When u use them too hasty, u may lose control! (specially at lowspeed)</line>
+  <line>Thats also the fact with nearly every fast/powerfull maneuvers !</line>
+  <line></line>
+  <line>This Plane dont likes hasty movements.... be gentle ;)</line>
+  <line></line>
+  <line>The FDM is enhanced with orig. datas! If u want the older one </line>
+  <line>take the "helijah-yasim" (see readme) </line>
+  <line>U just need some practice and it'll work. Startup is already done,</line>
+  <line>brakes are on, if u have to abort the takeoff hit the red button!</line>
+  <line></line>
+  <line></line>
+  <line></line>
+  <line>   Jet-Warmup:</line>
+  <line>1. Increase throttle till 10.000rpm</line>
+  <line>2. Wait till exhaust temp reach 700 degr C (red mark)</line>
+  <line>3. Full power till exhaust temp has reached 900 degr C</line>
+  <line>   (advanced airmens and womens can go further here  </line>
+  <line>    with point 5 in the next step )</line>
+  <line></line>
+  <line></line>
+  <line>   Take-Off:</line>
+  <line>speed: ~95knts</line>
+  <line>1. Flaps at step 1 </line>
+  <line>   (high grossweight: step 2/ nearly empty: no flaps)</line>
+  <line>2. Full Elevator !</line>
+  <line>3. No Aileron, No Rudder, before Wheels come off</line>
+  <line>   make sure both are centered!!</line>
+  <line>4. Before u release parking brake now.... </line>
+  <line>    remind ur self to use brakes rather than rudder.....</line>
+  <line>5. Release parking brake</line>
+  <line>6. hold pitch (10-11 degr) </line>
+  <line></line>
+  <line></line>
+  <line>   Landing:</line>
+  <line>speed: 93-100knts</line>
+  <line>        (~120knts  5nm out)</line>
+  <line>        (~250knts 12nm out)</line>
+  <line></line>
+  <line>1. Airbrake + Full flaps </line>
+  <line>2. Increase pitch to 10 degr before touchdown</line>
+  <line>3. (There has a braking chute to come)</line>
+  <line>4. bit tricky, for the begin try</line>
+  <line>    200knts 12nm out</line>
+  <line></line>
+  <line></line>
+  <line>  taxing:</line>
+  <line>...now u can use ur rudder^^</line>
+  <line></line>
+  <line></line>
+  <line></line>
+  <line></line>
+  <line>Performance:</line>
+  <line></line>
+  <line>    Maximum speed:     977 km/h (607 mph) @12km(39kft)</line>
+  <line>    Service ceiling:  16,000 m (52,000 ft)</line>
+  <line>    Rate of climb:           22 m/s (4,330 ft/min)</line>
+  <line>    Wing loading:      137.7 kg/m² (28.2 lb/ft²)</line>
+  <line>    Thrust/weight:         0.26</line>
+  <line></line>
+  <line></line>
+  <line>                                       still under construction.....</line>
+  <line></line>
+  
+</PropertyList>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+   
+  <name>options-dlg</name>
+  <layout>vbox</layout>
+   
+  <text>
+    <label>Horten 229</label>
+  </text>
+   
+  <hrule />
+   
+  <group>
+    <layout>vbox</layout> 
+     
+    <checkbox>
+      <label>  Shadow      </label>
+      <property>sim/rendering/shadows/enabled</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+      <live>true</live>
+    </checkbox> 
+ 
+    <checkbox>
+      <label> Afterburner  </label>
+      <property>/sim/unrealistic/Nachbrenner</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+      <live>true</live>
+    </checkbox> 
+    
+    <!-- You can easyly include here a soundtrack/musik/signals... see sound.xml last entry>
+    <checkbox> 
+      <label>Search Signal</label>
+      <property>sim/signals/search</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    <binding>
+      <command>property-assign</command>
+      <property>/sim/sound/volume</property> 
+      <value>1</value>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property>/sim/sound/effects/volume</property> 
+    <value>0.02</value>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property>/sim/sound/avionics/volume</property> 
+      <value>1</value>
+    </binding> 
+      <live>true</live>
+    </checkbox> 
+    -->
+  </group>
+    
+  <hrule />
+     
+  <group>
+    <layout>vbox</layout>    
+    <button>
+      <legend>Close</legend>
+      <default>true</default>
+      <key>Esc</key>
+      <padding>10</padding>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+     
+</PropertyList>
