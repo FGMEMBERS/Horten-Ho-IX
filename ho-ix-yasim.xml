@@ -13,11 +13,11 @@
                             http://www.cockpitinstrumente.de/Flugzeuge/Jeager/Go229/Go229.htm
 
      Breite            :   16.76 m        ( 55 ft 0 in)
-     Länge             :    7.47 m        ( 24 ft 6 in)
-     Höhe              :    2.81 m        (  9 ft 2 in)
+     LÃ¤nge             :    7.47 m        ( 24 ft 6 in)
+     HÃ¶he              :    2.81 m        (  9 ft 2 in)
      Leergewicht       :    4600 kg       ( 10141 lb)
      Aggregat          : 2 x Junkers Jumo 004B turbojet (1956 lbf each)
-     Höchstgeschw.     : Mach 0.92, 977 km/h (528 kt) at 12000 m (39370 ft) 
+     HÃ¶chstgeschw.     : Mach 0.92, 977 km/h (528 kt) at 12000 m (39370 ft) 
                          (is theoretic cause the Ho 229 v3 never flew)
      
      gesamter Kraftstoffvorrat 3.730 Liter (1865 pro Seite, 3366 lbs)
@@ -96,7 +96,7 @@
           incidence="0"
           dihedral="2.6"
           camber="0.045">
-          <stall aoa="18" width="8." peak="1.5"/>
+          <stall aoa="18" width="8" peak="1.5"/>
           <flap0 start="0" end="1" lift="1.3" drag="1.6"/>
           <flap1 start="0" end="1" lift="1.3" drag="1.6"/>
           
@@ -335,11 +335,11 @@
   
   <!-- RuderKlappen (rudder)-->
   <vstab x="-1.320" y="6.768" z="0.17"
-         chord="1" 
-         length="1" 
+         chord="2" 
+         length="4" 
          taper="1">
          <stall aoa="18" width="6" peak="1.5"/>
-         <flap0 start="0" end="1" lift="1.1" drag="1.4"/>
+         <flap0 start="0.2" end="0.8" lift="1.2" drag="1.1"/>
 
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
          <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
@@ -348,11 +348,11 @@
   </vstab>
 
   <vstab x="-1.320" y="-6.768" z="0.17"
-         chord="1" 
-         length="1" 
+         chord="2" 
+         length="4" 
          taper="1">
          <stall aoa="18" width="6" peak="1.5"/>
-         <flap0 start="0" end="1" lift="1.1" drag="1.4"/>
+         <flap0 start="0.2" end="0.8" lift="1.2" drag="1.1"/>
 
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
          <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
@@ -456,6 +456,6 @@
   <tank x="1.00" y=" 3.85" z="0.48" jet="true" capacity="270.7"/>
 
   <!-- Mass displacment -->
-  <ballast x="1.3" y="0" z="0.25" mass="1000"/> 
+  <ballast x="1.3" y="0" z="0.5" mass="600"/> 
 
 </airplane>
